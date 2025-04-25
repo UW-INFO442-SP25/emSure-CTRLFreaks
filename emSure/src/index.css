@@ -1,0 +1,128 @@
+/* GLOBAL STYLING */
+:root {
+    --primary-color: #098A8C;
+    --primary-color-darker: #076B6C;
+    --primary-color-lighter: #83A6A6;
+    --secondary-color: #2859CD;
+    --secondary-color-darker: #1F49AB;
+    --tertiary-color: #B2D3D3;
+    --tertiary-color-darker: #879FA0;
+    --correct-color: #1A881E;
+    --error-color: #C11F1F;
+    --black: #1A2E35;
+    --white: #F3FDFD;
+}
+
+* {
+    font-family: "aileron", sans-serif, 'Helvetica Neue';
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+    letter-spacing: 0;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+
+
+/* FONT STYLING */
+h1 {
+    font-size: 3.75rem;
+}
+
+h2 {
+    font-size: 2.75rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1.25rem;
+}
+
+
+
+/* GLOBAL BACKGROUND */
+.bg-container {
+    height: 100vh;
+    width: 100vw;
+    background-color: #F3FDFD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.bg-gradient {
+    position:absolute;
+    width: 37.5rem;
+    height: 37.5rem;
+    background: radial-gradient(
+        ellipse at center, 
+        #DBE4F9 0%, 
+        #BCEDF3 60%,
+        #F3FDFD 100%
+    );
+    filter: blur(5rem);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.content-container {
+    position: relative;
+    display: flex;
+    z-index: 1;
+    width: 75rem;
+    height: 28.125rem;
+}
+
+
+
+/* QUIZ LANDING PAGE */
+.content-container img {
+    width: 28.125rem;
+    height: 28.125rem;
+    object-fit: cover;
+}
+
+.quiz-page-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.content-container .quiz-page-text h1 {
+    font-weight: 900;
+    width: 44.875rem;
+    height: 9rem;
+    text-align: center;
+}
+
+.learn-quiz-options {
+    display: flex;
+    width: 21.875rem;
+    height: 3.3125rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.learn-quiz-options button {
+    border-radius: 2.25rem;
+    border: none;
+    padding: 0.75rem 1.75rem;
+    background-color: var(--secondary-color);
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.learn-quiz-options button:hover {
+    background-color: var(--secondary-color-darker);
+}
