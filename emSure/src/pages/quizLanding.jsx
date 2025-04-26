@@ -10,7 +10,7 @@ const QuizLanding = () =>
 
         <div className='content-container'>
 
-            <img src="/imgs/book-brain.png" alt="Book Brain"></img>
+            <img src="/imgs/book-brain.png" className="quiz-landing-img" alt="Book Brain"></img>
 
             <div className='quiz-page-text'>
 
