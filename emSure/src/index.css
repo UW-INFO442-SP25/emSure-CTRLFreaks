@@ -333,14 +333,14 @@ p {
 /* Quiz Page - BEGINNING */
 .quiz-body {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     overflow: hidden;
 }
 
 .quiz-main {
     display: flex;
     width: 1200px;
-    height: 650px;
+    height: 700px;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
@@ -374,6 +374,7 @@ p {
     flex-direction: column;
     align-items: flex-start;
     gap: 75px;
+    padding-bottom: 20px;
 }
 
 .options {
@@ -401,9 +402,9 @@ p {
 
 .turtle-img {
     position: absolute;
-    right: -250px;
-    bottom: -100px;
-    height: 600px;
+    right: -325px;
+    bottom: -125px;
+    height: 664px;
     max-width: 100%;
     z-index: 10;
 }
