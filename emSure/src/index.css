@@ -29,6 +29,8 @@ button {
 
 
 
+
+
 /* GLOBAL BUTTONS */
 .tertiary-btn, .tertiary-dark-btn, .secondary-btn, .secondary-dark-btn, .primary-btn, .primary-dark-btn, .primary-light-btn {
     width: 131px;
@@ -82,6 +84,8 @@ button {
 
 
 
+
+
 /* FONT STYLING */
 h1 {
     font-size: 3.75rem;
@@ -104,6 +108,8 @@ p {
 
 
 
+
+
 /* GLOBAL BACKGROUND */
 .bg-container {
     height: 100vh;
@@ -123,12 +129,31 @@ p {
     background: radial-gradient(
         ellipse at center, 
         #DBE4F9 0%, 
-        #BCEDF3 60%,
+        var(--primary-color) 60%,
         #F3FDFD 100%
     );
     filter: blur(5rem);
     z-index: 0;
-    pointer-events: none;
+    pointer-events: none; 
+    animation: gradientFloat 10s ease-in-out infinite;
+}
+
+@keyframes gradientFloat {
+    0% {
+        transform: translate(0,0) scale(1);
+    }
+    25% {
+        transform: translate(-100px, 100px) scale(1.5);
+    }
+    50% {
+        transform: translate(100px, -100px) scale(0.8);
+    }
+    75% {
+        transform: translate(-70px, -80px) scale(1).5;
+    }
+    100% {
+        transform: translate(0px, 0px) scale(1);
+    }
 }
 
 .content-container {
@@ -138,6 +163,75 @@ p {
     width: 75rem;
     height: 28.125rem;
 }
+
+
+
+
+
+/* HOME */
+
+.bg-container {
+    height: 100%;
+    background-color: var(--white);
+}
+
+.content-container.home {
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    width: 75rem;
+    height: 100%;
+    margin: 15rem 5rem;
+    gap: 20rem;
+}
+
+.home-box-1, .home-box-2, .home-box-3 {
+    display: flex;
+    padding: 3rem;
+    width: 1200px;
+    justify-content: space-between;
+}
+
+.home-box-1 img, .home-box-2 img, .home-box-3 img {
+    width: 200px;
+    height: 200px;
+    /* background: radial-gradient(
+        ellipse at center, 
+        var(--primary-color) 0%,
+        #F3FDFD 100% 
+    );
+    backdrop-filter: blur(1rem); */
+} 
+
+.home-box-1-content, .home-box-2-content, .home-box-3-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+.home-box-1-content {
+    width: 700px;
+}
+
+.home-box-2-content, .home-box-3-content {
+    width: 510px;
+}
+
+.home-box-2 {
+    flex-direction: row-reverse;
+}
+
+.home-box-1-content .primary-btn, .home-box-2-content .secondary-btn, .home-box-3-content .secondary-btn {
+    width: fit-content;
+}
+
+
+
 
 
 
@@ -185,15 +279,9 @@ p {
 
 
 
-/* QUIZ ONBOARDING PAGE */
-.content-container.quiz-onboarding {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 193px;
-    left: 156px;
-}
 
+
+/* QUIZ ONBOARDING PAGE */
 .quiz-onboarding-content {
     display: flex;
     flex-direction: column;

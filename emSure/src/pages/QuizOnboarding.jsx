@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { TertiaryButton, SecondaryButton } from '../components/buttons';
+import Navbar from '../components/navBar';
 
 const QuizOnboarding = () => 
 {
@@ -31,7 +32,7 @@ const QuizOnboarding = () =>
         if (currDialogueIndex < dialogueTop.length - 1)
         {
             setCurrDialogueIndex(prev => prev + 1);
-            console.log("hiii is this owrking???");
+            // console.log("hiii is this owrking???");
         }
         else {
             setCurrDialogueIndex(0);
