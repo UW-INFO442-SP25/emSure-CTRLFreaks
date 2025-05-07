@@ -4,7 +4,7 @@ const QuizLanding = () =>
 {
   return (
 
-    <div className='bg-container'>
+    <div className='bg-container quiz-landing'>
 
         <div className='bg-gradient'></div>
 

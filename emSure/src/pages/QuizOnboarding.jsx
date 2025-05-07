@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { TertiaryButton, SecondaryButton } from '../components/buttons';
-import Navbar from '../components/navBar';
+import { useNavigate } from 'react-router-dom';
 
 const QuizOnboarding = () => 
 {
     const [ currDialogueIndex, setCurrDialogueIndex ] = useState(0);
+    const navigate = useNavigate();
 
     const dialogueTop = [ 
         "Hi, I’m Tilly the Turtle!", 
@@ -32,17 +33,16 @@ const QuizOnboarding = () =>
         if (currDialogueIndex < dialogueTop.length - 1)
         {
             setCurrDialogueIndex(prev => prev + 1);
-            // console.log("hiii is this owrking???");
         }
         else {
             setCurrDialogueIndex(0);
-            console.log("Finished quiz! Starting over...");
+            navigate('/quiz');
         }
     };
 
     return (
 
-        <div className='bg-container'>
+        <div className='bg-container quiz-onboarding'>
 
             <div className='bg-gradient'></div>
 
@@ -65,8 +65,12 @@ const QuizOnboarding = () =>
 
                 </div>
 
-                <img src={ dialogueTurtle[currDialogueIndex] } className="quiz-onboarding-img" alt="Turtle Smiling"></img>
+                <div className='quiz-onboarding-img-container'>
+                    
+                    <img src={ dialogueTurtle[currDialogueIndex] } className="quiz-onboarding-img" alt="Turtle Smiling"></img>
                 
+                </div>
+
             </div>
 
         </div>
