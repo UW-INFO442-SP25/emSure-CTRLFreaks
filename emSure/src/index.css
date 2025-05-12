@@ -2,7 +2,7 @@
 :root {
     --primary-color: #098A8C;
     --primary-color-darker: #076B6C;
-    --primary-color-lighter: #83A6A6;
+    --primary-color-lighter: #D4E4E4;
     --secondary-color: #2859CD;
     --secondary-color-darker: #1F49AB;
     --tertiary-color: #B2D3D3;
@@ -33,7 +33,7 @@ button {
 
 /* GLOBAL BUTTONS */
 .tertiary-btn, .tertiary-dark-btn, .secondary-btn, .secondary-dark-btn, .primary-btn, .primary-dark-btn, .primary-light-btn {
-    width: 131px;
+    width: fit-content;
     height: 53px;
     border-radius: 36px;
     padding: 12px 28px;
@@ -80,24 +80,53 @@ button {
 
 .primary-light-btn {
     background-color: var(--primary-color-lighter);
+    border: none;
 }
+
+.primary-light-btn.active {
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/*
+.primary-light-btn:hover {
+    border: 2px solid #6D808D;
+}
+*/
 
 .option-btn {
     display: flex;
     width: 400px;
+    height: 106px;
     padding: 24px 36px;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    flex-shrink: 0;
 
     border-radius: 16px;
-    border: 2px solid var(--Secondary-Blue, #2859CD);
+    border: 2px solid var(--secondary-color);
     background: #EAEFFB;
     box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.25);
 }
 
 .option-btn:hover {
     background: rgba(40, 89, 205, 0.50);
+}
+
+.option-btn.active {
+    color: var(--white);
+    border-radius: 16px;
+    background: var(--secondary-color);
+    /* box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.25); */
+}
+
+.option-btn.error {
+    border-radius: 16px;
+    border: 4px solid var(--error-color);
+    background: #FFE9E9;
+    box-shadow: 2px 2px 2px 0px rgba(193, 31, 31, 0.25);
 }
 
 
@@ -457,7 +486,7 @@ p {
 .quiz-main {
     display: flex;
     width: 1200px;
-    height: 700px;
+    height: 720px;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
@@ -470,13 +499,6 @@ p {
     position: relative;
 }
 
-.option-set {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-self: stretch;
-}
-
 .done-cntr {
     display: flex;
     flex-direction: column;
@@ -485,21 +507,31 @@ p {
     align-self: stretch;
 }
 
+.top-bottom-half {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+}
+
 .bottom-half {
     display: flex;
     width: 824px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 75px;
+    gap: 48px;
     padding-bottom: 20px;
 }
 
 .options {
     display: flex;
-    flex-direction: column;
+    width: 832px;
     align-items: flex-start;
-    gap: 32px;
-    align-self: stretch;
+    align-content: flex-start;
+    grid-row-gap: 24px;
+    grid-column-gap: 24px;
+    flex-wrap: wrap;
 }
 
 .top-half {
@@ -526,5 +558,40 @@ p {
     z-index: 10;
 }
 
+.incorrect {
+    color: var(--error-color);
+    font-weight: 700;
+
+}
+
+.correct {
+    font-weight: 700;
+
+    color: var(--correct-color);
+    font-weight: 700;
+
+}
+
+.progress-bar-outer {
+    display: flex;
+    width: 1200px;
+    height: 32px;
+    padding: 0 4px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+
+    border-radius: 1000px;
+    border: 1px solid var(--Secondary-Blue, #2859CD);
+    background: #C9DFDF;
+}
+
+.progress-bar-inner {
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: 1000px;
+    background: var(--Primary-Teal, #098A8C);
+}
 
 /* Quiz Page - ENDING */
