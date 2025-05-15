@@ -1,0 +1,153 @@
+
+[
+  {
+    "question": "What is a premium?",
+    "options": [
+      "The amount you pay for your insurance policy",
+      "The amount you pay when visiting a doctor",
+      "The maximum your insurance covers annually",
+      "A bonus payment when you don't use your insurance"
+    ],
+    "correctAnswer": "The amount you pay for your insurance policy"
+  },
+  {
+    "question": "What does the term 'deductible' mean in health insurance?",
+    "options": [
+      "The amount deducted from your paycheck for insurance",
+      "The amount you must pay before your insurance begins to pay",
+      "The discount you receive for being healthy",
+      "The maximum amount your plan will cover"
+    ],
+    "correctAnswer": "The amount you must pay before your insurance begins to pay"
+  },
+  {
+  "question": "What is coinsurance?",
+  "options": [
+    "Having multiple insurance policies",
+    "The percentage of costs you pay after meeting your deductible",
+    "Insurance you share with your spouse",
+    "The insurance company's portion of the bill"
+  ],
+  "correctAnswer": "The percentage of costs you pay after meeting your deductible"
+  },
+  {
+    "question": "What is a copayment or \"copay\"?",
+    "options": [
+      "A fixed amount you pay for a covered service",
+      "The cost of adding someone to your policy",
+      "A payment arrangement plan",
+      "The fee for changing insurance providers"
+    ],
+    "correctAnswer": "A fixed amount you pay for a covered service"
+  },
+  {
+    "question": "What does \"out-of-pocket maximum\" refer to?",
+    "options": [
+      "Cash you keep in your wallet for medical emergencies",
+      "The most you will pay during a policy period before insurance covers 100%",
+      "Money you save in a health savings account",
+      "The maximum amount your insurance will pay annually"
+    ],
+    "correctAnswer": "The most you will pay during a policy period before insurance covers 100%"
+  },
+  {
+    "question": "What is the difference between an HMO and PPO plan?",
+    "options": [
+      "HMOs require referrals for specialists and limit network coverage; PPOs offer more flexibility but typically cost more",
+      "HMOs cost more but provide better coverage; PPOs are cheaper with limited coverage",
+      "HMOs cover dental and vision; PPOs only cover medical",
+      "There is no difference; they are alternative names for the same type of plan"
+    ],
+    "correctAnswer": "HMOs require referrals for specialists and limit network coverage; PPOs offer more flexibility but typically cost more"
+  },
+  {
+    "question": "What is a Health Savings Account (HSA)?",
+    "options": [
+      "An emergency fund managed by your employer",
+      "A tax-advantaged savings account for medical expenses, only available with high-deductible health plans",
+      "A payment plan for medical bills",
+      "A government subsidy for low-income individuals"
+    ],
+    "correctAnswer": "A tax-advantaged savings account for medical expenses, only available with high-deductible health plans"
+  },
+  {
+    "question": "What is an explanation of benefits (EOB)?",
+    "options": [
+      "A marketing brochure explaining insurance benefits",
+      "A statement from your insurance company showing what was paid on your claim",
+      "A doctor's note explaining your medical condition",
+      "The fine print section of your insurance policy"
+    ],
+    "correctAnswer": "A statement from your insurance company showing what was paid on your claim"
+  },
+  {
+    "question": "What does \"in-network\" mean?",
+    "options": [
+      "Providers who have contracted with your insurance company to provide services",
+      "Doctors who work at the same hospital",
+      "Healthcare professionals who are connected online",
+      "A group of specialists who work together"
+    ],
+    "correctAnswer": "Providers who have contracted with your insurance company to provide services"
+  },
+  {
+    "question": "What is a formulary?",
+    "options": [
+      "A mathematical equation used to calculate premiums",
+      "A list of prescription drugs covered by your insurance plan",
+      "A form you submit for reimbursement",
+      "The formula used to determine your deductible"
+    ],
+    "correctAnswer": "A list of prescription drugs covered by your insurance plan"
+  },
+  {
+    "question": "What is \"balance billing\"?",
+    "options": [
+      "When you can spread your premium payments over time",
+      "When a provider bills you for the difference between their charge and what insurance paid",
+      "When your account is settled to zero",
+      "A method of tracking medical expenses"
+    ],
+    "correctAnswer": "When a provider bills you for the difference between their charge and what insurance paid"
+  },
+  {
+    "question": "What is a prior authorization?",
+    "options": [
+      "Permission given by your primary care doctor to see a specialist",
+      "Approval from your insurance company required before certain services are covered",
+      "Permission to access your medical records",
+      "An agreement to pay medical expenses upfront"
+    ],
+    "correctAnswer": "Approval from your insurance company required before certain services are covered"
+  },
+  {
+    "question": "What is the difference between an embedded and non-embedded deductible?",
+    "options": [
+      "Embedded: each family member has own deductible. Non-Embedded: family must meet one large deductible",
+      "Embedded: apply to hospital stays. Non-Embedded apply to outpatient care",
+      "Embedded: reset annually. Non-Embedded roll over",
+      "There is no difference; these are marketing terms"
+    ],
+    "correctAnswer": "Embedded: each family member has own deductible. Non-Embedded: family must meet one large deductible"
+  },
+  {
+    "question": "What is a high-deductible health plan (HDHP)?",
+    "options": [
+      "Any plan with an expensive monthly premium",
+      "A plan that requires you to pay most costs out-of-pocket",
+      "A health plan with lower premiums but higher deductibles that meets IRS criteria for HSA eligibility",
+      "A plan specifically for catastrophic illnesses"
+    ],
+    "correctAnswer": "A health plan with lower premiums but higher deductibles that meets IRS criteria for HSA eligibility"
+  },
+  {
+    "question": "What is an exclusive provider organization (EPO)?",
+    "options": [
+      "A plan that only covers emergency services",
+      "A hybrid plan offering HMO pricing with PPO flexibility, but no out-of-network coverage except emergencies",
+      "A luxury insurance option for executives",
+      "A plan exclusively for preventive care"
+    ],
+    "correctAnswer": "A hybrid plan offering HMO pricing with PPO flexibility, but no out-of-network coverage except emergencies"
+  }
+]
