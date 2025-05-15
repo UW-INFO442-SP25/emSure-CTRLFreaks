@@ -1,58 +1,52 @@
 import React, { useState } from 'react';
-import { PrimaryButton, PrimaryLightButton, StaticOptionButton } from '../components/buttons';
+import { PrimaryButton, PrimaryLightButton, StaticOptionButton, SecondaryButton } from '../components/buttons';
 import { ProgressBar } from '../components/progressBar'
-
-
-const quizData = [
-  {
-    question: "What is a premium?",
-    options: ["The amount you pay for your insurance policy",
-      "The amount you pay when visiting a doctor",
-      "The maximum your insurance covers annually",
-      "A bonus payment when you don't use your insurance"],
-    correctAnswer: "The amount you pay for your insurance policy"
-  },
-  {
-    question: "What does the term 'deductible' mean in health insurance?",
-    options: ["The amount deducted from your paycheck for insurance",
-      "The amount you must pay before your insurance begins to pay",
-      "The discount you receive for being healthy",
-      "The maximum amount your plan will cover"],
-    correctAnswer: "The amount you pay for your insurance policy"
-  },
-  {
-  question: "What is coinsurance?",
-  options: ["Having multiple insurance policies",
-    "The percentage of costs you pay after meeting your deductible",
-    "Insurance you share with your spouse",
-    "The insurance company's portion of the bill"],
-  correctAnswer: "Insurance you share with your spouse"
-  }
-];
+import data from '../data/quiz-questions.json';
 
 
 export default function QuizPage(props) {
+  const [shuffledQuestions, setShuffledQuestions] = useState(() =>
+    [...data].sort(() => Math.random() - 0.5).slice(0, 5)
+  );
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const currentQuestion = quizData[currentQuestionIndex];
   const [selected, setSelected] = useState(null);
   const [isCorrect, setIsCorrect] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
   const [showSelectWarning, setShowSelectWarning] = useState(false);
-  const [lastQuestion, setLastQuestion] = useState(false);
+  const [quizScore, setQuizScore] = useState({ correct: 0, total: shuffledQuestions.length });
+  const [incorrectAnswers, setIncorrectAnswers] = useState([]);
+  const [quizReadyToComplete, setQuizReadyToComplete] = useState(false);
+  const [quizCompleted, setQuizCompleted] = useState(false);
 
+
+  const currentQuestion = shuffledQuestions[currentQuestionIndex];
+  const getTurtleImage = () => {
+    if (showFeedback && isCorrect === true) {
+      return "/imgs/happy-turtle.png";
+    } else if (showFeedback && isCorrect === false) {
+      return "/imgs/sad-turtle.png";
+    } else {
+      return "/imgs/neutral-turtle.png";
+    }
+  };
 
 
   const handleAnswerSelect = (option) => {
     setSelected(selected === option ? null : option);
+    setShowSelectWarning(false);
   };
 
+
   const optionButtons = currentQuestion.options.map((option, index) => {
+    const showWarning = showSelectWarning && selected === null;
+    console.log(currentQuestionIndex)
+
     return (
       <StaticOptionButton
         key={index}
         text={option}
         isSelected={selected === option}
-        showWarningStyle={showSelectWarning && selected === null}
+        showWarningStyle={showWarning}
         onClick={showFeedback ? null : () => handleAnswerSelect(option)}
       />
     );
@@ -65,15 +59,37 @@ export default function QuizPage(props) {
     setShowFeedback(false);
     setSelected(null);
     setShowSelectWarning(false);
-    setCurrentQuestionIndex((prevIndex) =>
-        (prevIndex + 1) % quizData.length
-      );
+
+    setCurrentQuestionIndex(prevIndex => prevIndex + 1);
+
     console.log("next page")
+    console.log(incorrectAnswers)
   }
 
   const handleSubmitQuestion = () =>
   {
+    const correct = selected === currentQuestion.correctAnswer;
+    setIsCorrect(correct);
     setShowFeedback(true)
+
+    if (currentQuestionIndex === shuffledQuestions.length - 1) {
+      setQuizReadyToComplete(true);
+      console.log("last question")
+    }
+
+    if (correct) {
+      setQuizScore(prev => ({ ...prev, correct: prev.correct + 1 }));
+    } else {
+      setIncorrectAnswers(prev => [
+        ...prev,
+        {
+          questionIndex: currentQuestionIndex,
+          question: currentQuestion.question,
+          userAnswer: selected,
+          correctAnswer: currentQuestion.correctAnswer
+        }
+      ]);
+    }
   }
 
   const handleQuestionCheck = () =>
@@ -85,29 +101,38 @@ export default function QuizPage(props) {
     }
   }
 
-  const handleFinishQuiz = () =>
-  {
+  const handleRestartQuiz = () => {
+    setCurrentQuestionIndex(0);
+    setSelected(null);
+    setIsCorrect(null);
+    setShowFeedback(false);
+    setIncorrectAnswers([]);
+    setQuizCompleted(false);
+    setQuizScore({ correct: 0, total: shuffledQuestions.length });
+    setQuizReadyToComplete(false);
+    setQuizCompleted(false);
+    setShuffledQuestions([...data].sort(() => Math.random() - 0.5).slice(0, 5));
 
-  }
+    console.log(quizScore)
+    console.log(incorrectAnswers)
+  };
 
 
   const actionButton = (() => {
-    if (selected == null) {
+    if (quizReadyToComplete) {
+      return (
+        < PrimaryButton
+        text="Finish Quiz"
+        onClick={() => setQuizCompleted(true)}
+        />
+      )
+    } else if (selected == null) {
       return (
         < PrimaryLightButton
         text="Submit Answer"
         onClick={() => setShowSelectWarning(true)}
       />
       );
-    } else if (lastQuestion) {
-      return (
-        < PrimaryButton
-        text="Finish Quiz"
-        // onClick={() => {
-        //   handleFinishQuiz();
-        // }}
-        />
-      )
     } else if (selected != null && !showFeedback) {
       return (
         < PrimaryButton
@@ -148,9 +173,6 @@ export default function QuizPage(props) {
 
 
   const optionError = (() => {
-    console.log('please select answer')
-    console.log(showSelectWarning)
-
     if (showSelectWarning) {
       return (
         <h3>
@@ -162,6 +184,76 @@ export default function QuizPage(props) {
     }
   })();
 
+  const incorrectAnswerCards = incorrectAnswers.map(incorrectAnswer => {
+    return (
+
+      <div className="incorrect-answer-card" key={incorrectAnswer.questionIndex}>
+        <h3>{incorrectAnswer.question}</h3>
+
+        <div className="answer-summary">
+
+          <div className="your-answer">
+            <p className="left-answer">Your Answer:</p>
+            <p className="right-answer">{incorrectAnswer.userAnswer}</p>
+          </div>
+
+          <div className="correct-answer">
+            <p className="left-answer">Correct Answer:</p>
+            <p className="right-answer">{incorrectAnswer.correctAnswer}</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    );
+  });
+
+
+  if (quizCompleted) {
+    return (
+      <div className="results-body">
+        <div className="results-top">
+          <div className="completed">
+            <img src="/imgs/turtle-on-back.png" className="results-turtle" alt="happy turtle on its back" />
+            <h1>Completed!</h1>
+          </div>
+
+          <div className="score">
+            <h3>Your Score</h3>
+            <div className="out-of-score">
+              <h2>{quizScore.correct}</h2>
+              <h3>out of</h3>
+              <h2>{shuffledQuestions.length}</h2>
+            </div>
+
+          </div>
+        </div>
+
+        <div className='results-bottom'>
+          <div className="missed-questions">
+            <h2>Questions you missed</h2>
+            <div className="incorrect-answers">
+              {incorrectAnswerCards}
+            </div>
+          </div>
+
+          <div className="results-buttons">
+            < SecondaryButton
+            text="Learn More"
+            />
+
+            < PrimaryButton
+            text="Retake Quiz"
+            onClick={handleRestartQuiz}
+            />
+          </div>
+        </div>
+
+      </div>
+    )
+  }
+
 
   return (
     <div className="quiz-body">
@@ -170,7 +262,7 @@ export default function QuizPage(props) {
         <div className="top-half">
           < ProgressBar
             currentQuestion={currentQuestionIndex + 1}
-            totalQuestions={quizData.length}
+            totalQuestions={shuffledQuestions.length}
           />
           <div className="question">
             <p>QUESTION {currentQuestionIndex + 1}</p>
@@ -192,7 +284,7 @@ export default function QuizPage(props) {
           </div>
         </div>
 
-        <img src="/imgs/sad-turtle.png" className="turtle-img" alt="sad turtle" />
+        <img src={getTurtleImage()} className="turtle-img" alt="sad turtle" />
 
       </div>
     </div>
