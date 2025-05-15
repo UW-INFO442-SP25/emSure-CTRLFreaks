@@ -5,6 +5,8 @@ import QuizOnboarding from './pages/QuizOnboarding';
 import Home from './pages/Home';
 import Navbar from './components/navBar';
 import QuizPage from './pages/QuizPage';
+import LoginPage from './pages/LoginPage';
+import SignupPage from './pages/SignupPage';
 
 const App = () =>
 {
@@ -20,6 +22,8 @@ const App = () =>
                 <Route path="/quiz-onboarding" element={ <QuizOnboarding /> } />
                 <Route path="/quiz-landing" element={ <QuizLanding /> } />
                 <Route path="/quiz" element={ <QuizPage /> } />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/signup" element={<SignupPage />} />
 
             </Routes>
 
