@@ -475,6 +475,14 @@ p {
     color: var(--white) !important;
 }
 
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    object-fit: cover;
+  }
+  
+/* NavBar Comp - ENDING */
 
 /* Quiz Page - BEGINNING */
 .quiz-body {
