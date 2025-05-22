@@ -7,6 +7,7 @@ import Navbar from './components/navBar';
 import QuizPage from './pages/QuizPage';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
+import ProfilePage from'./pages/ProfilePage';
 
 const App = () =>
 {
@@ -24,6 +25,7 @@ const App = () =>
                 <Route path="/quiz" element={ <QuizPage /> } />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/signup" element={<SignupPage />} />
+                <Route path="/profile" element={<ProfilePage />} />
 
             </Routes>
 
