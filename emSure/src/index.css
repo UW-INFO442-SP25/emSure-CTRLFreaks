@@ -866,85 +866,85 @@ p {
 /* Sign up page - ENDING */
 
 /* ABOUT US PAGE - BEGINNING */
-.logo {
-font-size: 28px;
-font-weight: bold;
+.aboutus {
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.signup {
-background-color: #d9d9d9;
-border: none;
-padding: 8px 16px;
-border-radius: 20px;
-font-size: 16px;
-cursor: pointer;
+.aboutus-mission {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
 }
 
-.mission {
-display: flex;
-justify-content: space-between;
-align-items: flex-start;
-gap: 60px;
+.aboutus-mission-text {
+  flex: 1;
+  min-width: 300px;
 }
 
-.mission-text {
-flex: 1;
+.aboutus-mission-text h1 {
+font-size: 2.5rem;
+margin-bottom: 1rem;
+color: #1a1a1a;
 }
 
-.mission-text h1 {
-font-size: 48px;
-margin-bottom: 20px;
+.aboutus-mission-text p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
 }
 
-.mission-text p {
-font-size: 18px;
-line-height: 1.6;
+.aboutus-mission-img {
 max-width: 500px;
-}
-
-.mission-img {
-width: 500px;
 height: 300px;
 background-color: #999;
 }
 
-.team {
+.aboutus-team {
 margin-top: 100px;
 text-align: center;
 }
 
-.team h2 {
+.aboutus-team h2 {
 font-size: 36px;
 margin-bottom: 50px;
+color: #1a1a1a;
 }
 
-.team-members {
+.aboutus-team-members {
 display: flex;
 justify-content: center;
 gap: 40px;
 flex-wrap: wrap;
 }
 
-.member {
+.aboutus-member {
 text-align: center;
 width: 140px;
 }
 
-.photo {
+.aboutus-photo img {
 width: 140px;
 height: 140px;
 background-color: #999;
 margin-bottom: 10px;
 }
 
-.member strong {
+.aboutus-member strong {
 display: block;
 font-size: 16px;
 margin-bottom: 4px;
 }
 
-.member p {
-font-size: 14px;
+.aboutus-member p {
+  font-size: 0.95rem;
+  color: #666;
 }
  /* ABOUT US PAGE - ENDING */
 
