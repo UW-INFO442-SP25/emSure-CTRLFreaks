@@ -5,6 +5,7 @@ import QuizOnboarding from './pages/QuizOnboarding';
 import Home from './pages/Home';
 import Navbar from './components/navBar';
 import QuizPage from './pages/QuizPage';
+import Glossary from './pages/Glossary';
 
 const App = () =>
 {
@@ -20,6 +21,7 @@ const App = () =>
                 <Route path="/quiz-onboarding" element={ <QuizOnboarding /> } />
                 <Route path="/quiz-landing" element={ <QuizLanding /> } />
                 <Route path="/quiz" element={ <QuizPage /> } />
+                <Route path="/glossary" element={ <Glossary /> } />
 
             </Routes>
 

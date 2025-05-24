@@ -525,6 +525,140 @@ p {
     max-width: 100%;
     z-index: 10;
 }
-
-
 /* Quiz Page - ENDING */
+
+
+
+
+
+
+
+
+/* Glossary Page - BEGINNING */
+.content-container.glossary {
+    padding: 13rem 6rem 6rem;
+    text-align: center;
+    flex-direction: column;
+    gap: 3.5rem;
+    align-items: center;
+    overflow-y: scroll;
+    height: 100vh;
+    scrollbar-width: none;
+    width: 100%;
+}
+/* Glossary Page - ENDING */
+
+
+
+
+
+
+
+
+
+/* Search Bar - BEGINNING */
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 2.8125rem;   
+    background-color: white;
+    border: solid 1px #919191;
+    border-radius: 1.5rem;
+    padding: 10px;
+}
+
+.search-bar-input {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    color: #919191;
+    font-size: 1rem;
+}
+
+.search-icon {
+    color: #919191;
+}
+
+.results-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 3rem;
+    
+}
+
+.search-bar-input:focus {
+    outline: none;
+
+  }
+/* Search Bar - ENDING */
+
+
+
+
+
+
+
+
+
+
+
+/* Glossary Card - BEGINNING */
+.glossary-card {
+    background-color: white;
+    border: solid 4px #45AAB8;
+    height: 180px;
+    width: 400px;
+    padding: 30px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.glossary-card h3 {
+    color: #45AAB8;
+}
+
+.glossary-card p {
+    color: black;
+}
+/* Glossary Card - ENDING */
+
+
+
+
+
+
+
+/* Media Queries - BEGINNING */
+@media (max-width: 900px) 
+{
+    .content-container.glossary {
+        padding: 8rem 0 4rem 0;
+        flex-direction: column;
+        gap: 3.5rem;
+        align-items: center;
+        overflow-y: scroll;
+        height: 100vh;
+        scrollbar-width: none;
+        width: 345px;
+    }
+
+    .content-container.glossary h1 {
+        font-size: 2rem;
+    }
+
+    .glossary-card {
+        height: 150px;
+        width: 345px;
+        padding: 30px;
+        flex-direction: column;
+        gap: 0.5rem;
+    }   
+}
+/* Media Queries - ENDING */

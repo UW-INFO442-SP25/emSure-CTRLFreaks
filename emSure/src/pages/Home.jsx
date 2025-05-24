@@ -1,8 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { SecondaryButton, PrimaryButton } from '../components/buttons'
 
 const Home = () => 
 {
+    const navigate = useNavigate();
+
   return (
 
     <div className='home'>
@@ -33,7 +36,7 @@ const Home = () =>
 
                         <h2>Learn New Words</h2>
                         <p>Read and search through our glossary to learn about health insurance terms you don’t know</p>
-                        <SecondaryButton text="Glossary →" />
+                        <SecondaryButton text="Glossary →" onClick={ () => navigate('/glossary') }/>
 
                     </div>
 
