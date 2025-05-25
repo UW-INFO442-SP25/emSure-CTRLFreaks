@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const TertiaryButton = ({ text, onClick }) => 
+export const TertiaryButton = ({ text, onClick }) =>
 {
     return (
 
@@ -13,7 +13,7 @@ export const TertiaryButton = ({ text, onClick }) =>
     )
 }
 
-export const TertiaryDarkButton = ({ text, onClick }) => 
+export const TertiaryDarkButton = ({ text, onClick }) =>
 {
     return (
 
@@ -26,7 +26,7 @@ export const TertiaryDarkButton = ({ text, onClick }) =>
     )
 }
 
-export const SecondaryButton = ({ text, onClick }) => 
+export const SecondaryButton = ({ text, onClick }) =>
 {
     return (
 
@@ -40,7 +40,7 @@ export const SecondaryButton = ({ text, onClick }) =>
 }
 
 
-export const SecondaryDarkButton = ({ text, onClick }) => 
+export const SecondaryDarkButton = ({ text, onClick }) =>
 {
     return (
 
@@ -53,20 +53,20 @@ export const SecondaryDarkButton = ({ text, onClick }) =>
     )
 }
 
-export const PrimaryButton = ({ text, onClick }) => 
+export const PrimaryButton = ({ text, onClick }) =>
     {
         return (
-    
+
             <button className='primary-btn' onClick={ onClick }>
-    
+
                 <h3>{ text }</h3>
-    
+
             </button>
-    
+
         )
     }
-    
-export const PrimaryDarkButton = ({ text, onClick }) => 
+
+export const PrimaryDarkButton = ({ text, onClick }) =>
 {
     return (
 
@@ -79,11 +79,28 @@ export const PrimaryDarkButton = ({ text, onClick }) =>
     )
 }
 
-export const PrimaryLightButton = ({ text, onClick }) => 
+export const PrimaryLightButton = ({ text, onClick }) =>
 {
     return (
 
-        <button className='primary-light-btn' onClick={ onClick }>
+        <button
+            className='primary-light-btn'
+            onClick={ onClick }>
+
+            <h3>{ text }</h3>
+
+        </button>
+
+    )
+}
+
+export const StaticOptionButton =  ({ text, isSelected, onClick, showWarningStyle }) =>
+{
+    return (
+
+        <button
+            className={`option-btn ${isSelected ? 'active' : ''} ${showWarningStyle ? 'error' : ''}`}
+            onClick={ onClick }>
 
             <h3>{ text }</h3>
 

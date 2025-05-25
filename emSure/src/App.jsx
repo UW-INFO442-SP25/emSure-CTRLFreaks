@@ -6,6 +6,10 @@ import Home from './pages/Home';
 import Navbar from './components/navBar';
 import QuizPage from './pages/QuizPage';
 import Glossary from './pages/Glossary';
+import LoginPage from './pages/LoginPage';
+import SignupPage from './pages/SignupPage';
+import AboutPage from './pages/AboutPage';
+import ProfilePage from'./pages/ProfilePage';
 
 const App = () =>
 {
@@ -22,6 +26,10 @@ const App = () =>
                 <Route path="/quiz-landing" element={ <QuizLanding /> } />
                 <Route path="/quiz" element={ <QuizPage /> } />
                 <Route path="/glossary" element={ <Glossary /> } />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/signup" element={<SignupPage />} />
+                <Route path="/profile" element={<ProfilePage />} />
+                <Route path="/aboutpage" element={<AboutPage />} />
 
             </Routes>
 
