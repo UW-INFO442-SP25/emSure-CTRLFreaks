@@ -475,12 +475,58 @@ p {
     color: var(--white) !important;
 }
 
-.profile-icon {
-    width: 40px;
-    height: 40px;
+.profile-container {
+    position: relative;
+  }
+  
+  .profile-icon {
+    width: 70px;
+    height:70px;
     border-radius: 100%;
     object-fit: cover;
+    cursor: pointer;
+    padding: 4px;
   }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: var(--white);
+    border: 1.5px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 1rem;
+    width: 160px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction:column;
+    align-items:flex-start;
+    z-index: 200;
+  }
+  
+  .dropdown-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--black);
+  }
+  
+  .logout-button {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.1rem;
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .logout-button:hover {
+    background-color: var(--primary-color-darker);
+  }
+  
   
 /* NavBar Comp - ENDING */
 

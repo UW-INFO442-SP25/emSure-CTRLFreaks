@@ -1,28 +1,34 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
-import { onAuthStateChanged } from 'firebase/auth';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
 
 export default function Navbar() {
-  const [user, setUser] = useState(null); // stores logged-in user
+  const [user, setUser] = useState(null);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const navigate = useNavigate();
 
-  // check if user is logged in
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
-        setUser(currentUser);
-      } else {
-        setUser(null);
-      }
+      setUser(currentUser || null);
     });
-
     return () => unsubscribe();
   }, []);
+
+  // log out function
+  const handleLogout = async () => {
+    await signOut(auth);
+    setShowDropdown(false); // closes dropdown
+    navigate('/'); // redirects to homepage 
+  };
+
+  const toggleDropdown = () => {
+    setShowDropdown(prev => !prev);
+  };
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-
         <div className="navbar-left">
           <Link to="/" className="navbar-logo">emSured</Link>
         </div>
@@ -34,20 +40,25 @@ export default function Navbar() {
             <li className="nav-item"><Link to="/about">About</Link></li>
 
             {!user ? (
-              // show login & sign up buttons if not logged in
               <>
                 <li className="nav-item"><Link to="/login">Log in</Link></li>
                 <li className="nav-item"><Link to="/signup" className="sign-up-btn">Sign Up</Link></li>
               </>
             ) : (
-              // show profile icon if logged in
-              <li className="nav-item">
-                <Link to="/profile">
-                  <img
-                    src="/imgs/defaultpfp.png" 
-                    className="profile-icon"
-                  />
-                </Link>
+              <li className="nav-item profile-container">
+                <img
+                  src="/imgs/PFP.png"
+                  alt="Profile"
+                  className="profile-icon"
+                  onClick={toggleDropdown}
+                />
+
+                {showDropdown && (
+                  <div className="dropdown-menu">
+                    <Link to="/profile" className="dropdown-title" onClick={() => setShowDropdown(false)}> Profile </Link>
+                    <button className="logout-button" onClick={handleLogout}>Log out</button>
+                  </div>
+                )}
               </li>
             )}
           </ul>
