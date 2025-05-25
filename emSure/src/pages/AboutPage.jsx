@@ -1,20 +1,19 @@
 import React from 'react';
-// import '../index.css';
 
 const AboutPage = () => {
   const team = [
-    { name: "Simran Gupta", role: "UX Researcher", img: "/images/member1.jpg" },
-    { name: "Name Two", role: "UI Designer", img: "/images/member2.jpg" },
-    { name: "Name Three", role: "Frontend Developer", img: "/images/member3.jpg" },
-    { name: "Name Four", role: "Backend Developer", img: "/images/member4.jpg" },
-    { name: "Name Five", role: "Project Manager", img: "/images/member5.jpg" },
+    { name: "Simran Gupta", role: "Lead Researcher & Database", img: "/imgs/simran.jpg" },
+    { name: "Jason Cabusao", role: "Lead UX Designer & Developer", img: "/imgs/member2.jpg" },
+    { name: "Maryory Ajpop", role: "Lead Developer", img: "/imgs/member3.jpg" },
+    { name: "Dawn Nguyen", role: "Lead PM", img: "/imgs/dawn.jpg" },
+    { name: "Lei Ann Dela Cruz", role: "Lead UX Designer & Developer", img: "/imgs/member5.jpg" },
   ];
 
   return (
     <div>
-      <div className="aboutus-main-passage">
-        <div className="aboutus-mission">
-          <div className="aboutus-mission-text">
+      <div className="aboutpage-main-passage">
+        <div className="aboutpage-mission">
+          <div className="aboutpage-mission-text">
             <h1>Our mission</h1>
             <p>
               How might we support newly employed individuals in confidently understanding and selecting healthcare insurance plans, so they feel secure in their coverage? 
@@ -23,19 +22,19 @@ const AboutPage = () => {
               decision-making in accessing these health services.
             </p>
           </div>
-          <div className="aboutus-mission-img"></div>
+          <div className="aboutpage-mission-img"></div>
         </div>
 
-        <div className="team information"> 
+        <div className="aboutpage-team"> 
           <h2>Meet the team behind emSured</h2>
-          <div className="aboutus-team-members">
+          <div className="aboutpage-team-members">
             {team.map((member, index) => (
-                <div className="aboutus-member" key={index}>
-                <div className="aboutus-member-photo">
+                <div className="aboutpage-member" key={index}>
+                <div className="aboutpage-member-photo">
                   <img src={member.img} alt={member.name} />
                 </div>
-                <strong>member name</strong>
-                <p>member role</p>
+                <strong>{member.name}</strong>
+                <p>{member.role}</p>
               </div>
             ))}
           </div>
