@@ -649,26 +649,56 @@ p {
 
 /* Glossary Card - BEGINNING */
 .glossary-card {
-    background-color: white;
-    border: solid 4px #45AAB8;
-    height: 180px;
-    width: 400px;
-    padding: 30px;
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
+    background-color: transparent;
+    height: 300px;
+    width: 450px;
+    perspective: 1000px;
 }
 
-.glossary-card h3 {
+.glossary-card-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transition: transform 1.2s;
+  transform-style: preserve-3d;
+  background-color: white;
+  padding: 30px;
+  border: solid 4px #45AAB8;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glossary-card-content:hover {
+  transform: rotateY(180deg);
+  /* background-color: #45AAB8; */
+}
+
+.card-back, .card-front {
+  position: absolute;
+  backface-visibility: hidden;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  color: black;
+  overflow-y: scroll;
+  padding: 0 30px;
+}
+
+.card-back p {
+  line-height: 1.5;
+}
+
+.card-front {
     color: #45AAB8;
+    margin-bottom: 0.5rem;
 }
 
-.glossary-card p {
-    color: black;
-}
+
 /* Glossary Card - ENDING */
 
 
@@ -683,7 +713,7 @@ p {
     .content-container.glossary {
         padding: 8rem 0 4rem 0;
         flex-direction: column;
-        gap: 3.5rem;
+        gap: 3rem;
         align-items: center;
         overflow-y: scroll;
         height: 100vh;
@@ -696,12 +726,39 @@ p {
     }
 
     .glossary-card {
-        height: 150px;
+        height: 300px;
         width: 345px;
-        padding: 30px;
         flex-direction: column;
         gap: 0.5rem;
     }   
+
+    .glossary-card-content {
+      transition: none;
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    .glossary-card-content:hover {
+      transform: none;
+    }
+    
+    .card-back, .card-front {
+      backface-visibility: visible;
+      position: relative;
+    }
+
+    .card-front h3 {
+      font-size: 1.3rem;
+    }
+    
+    .card-back {
+      transform: none;
+      padding: 0;
+    }
+
+    .card-back p {
+      font-size: 1rem;
+    }
 }
 /* Media Queries - ENDING */
 

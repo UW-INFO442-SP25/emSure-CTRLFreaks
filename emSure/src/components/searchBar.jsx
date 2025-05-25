@@ -14,7 +14,7 @@ const SearchBar = ( { query, setQuery, onEnter } ) =>
 
         <div className='search-bar'>
             
-            <span class="material-symbols-outlined search-icon">
+            <span className="material-symbols-outlined search-icon">
                 search
             </span>
 

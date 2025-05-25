@@ -29,7 +29,7 @@ export default function Navbar() {
 
         <div className="navbar-right">
           <ul className="nav-menu">
-            <li className="nav-item"><Link to="/learn">Learn</Link></li>
+            <li className="nav-item"><Link to="/glossary">Learn</Link></li>
             <li className="nav-item"><Link to="/quiz">Quiz</Link></li>
             <li className="nav-item"><Link to="/about">About</Link></li>
 
