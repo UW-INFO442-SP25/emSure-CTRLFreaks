@@ -463,6 +463,12 @@ p {
     color: var(--primary-color);
 }
 
+.active-nav-link {
+    color: var(--primary-color-darker) !important;
+    font-weight: 900;
+  }
+  
+
 .sign-up-btn {
     background-color: var(--primary-color);
     color: var(--white) !important;
