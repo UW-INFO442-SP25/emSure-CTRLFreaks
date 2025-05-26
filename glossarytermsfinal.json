@@ -1,0 +1,186 @@
+[
+  {
+    "Glossary Term": "Allowed Amount",
+    "Term Definition": "This is the maximum payment the plan will pay for a covered health care service.  May \nalso be called “eligible expense,” “payment allowance,” or “negotiated rate.” Synonym: eligible expense, payment allowance, and negotiated rate"
+  },
+  {
+    "Glossary Term": "Appeal",
+    "Term Definition": "A request that your health insurer or plan review a \ndecision that denies a benefit or payment (either in whole or in part). Synonym: challenge, review request"
+  },
+  {
+    "Glossary Term": "Balance Billing",
+    "Term Definition": "When a provider bills you for the balance remaining on the bill that your plan doesn’t \ncover. This amount is the difference between the actual billed amount and the allowed amount. Synonym: suprise billing, out-of-network billing"
+  },
+  {
+    "Glossary Term": "Claim",
+    "Term Definition": "A request for a benefit (including reimbursement of a health care expense) made by you or your health care provider to your health insurer or plan for items or services you think are covered. Synonym: benefit request, insurance claim"
+  },
+  {
+    "Glossary Term": "Coinsurance",
+    "Term Definition": "Your share of the costs of a covered health care service, calculated as a percent (for \nexample, 20%) of the allowed amount for the service. You pay the coinsurance plus any deductibles you owe. Synonym: cost-sharing, shared payment"
+  },
+  {
+    "Glossary Term": "Complaint",
+    "Term Definition": "Health care providers, emergency facilities, and insurance plans must follow rules that \nprotect consumers from surprise medical bills. Synonym: grievance, concern, issue"
+  },
+  {
+    "Glossary Term": "Copayment",
+    "Term Definition": "A fixed amount (for example, $15) you pay for a covered health care service, usually when \nyou receive the service (sometimes called “copay”). Synonym: copay, fixed fee"
+  },
+  {
+    "Glossary Term": "Cost Sharing",
+    "Term Definition": "Your share of costs for services that a plan covers that you must pay out of your own \npocket (sometimes called “out-of-pocket costs”). Synonym: sharing costs, out-of-pocket expenses"
+  },
+  {
+    "Glossary Term": "Cost-sharing Reductions",
+    "Term Definition": "Discounts that reduce the amount you pay for certain services covered by an individual plan you buy through the Marketplace. Synonym: subsidies, financial assistance"
+  },
+  {
+    "Glossary Term": "Deductible",
+    "Term Definition": "An amount you could owe during a coverage period (usually one year) for covered health care services before your plan begins to pay. Synonym: excess, initial payment"
+  },
+  {
+    "Glossary Term": "Diagnostic Test",
+    "Term Definition": "Tests to figure out what your health problem is.  For example, an x-ray can be a diagnostic test to see if you have a broken bone. Synonym: medical test, screening"
+  },
+  {
+    "Glossary Term": "Dispute",
+    "Term Definition": " If you don’t have insurance or don’t plan to use your insurance to pay for your care, you may be able to use the patient-provider dispute resolution process if you disagree with your medical bill. Synonym: disagreement, conflict"
+  },
+  {
+    "Glossary Term": "Durable Medical Equipment (DME)",
+    "Term Definition": "Equipment and supplies ordered by a health care provider for everyday or extended use. Synonym: medical devices, assistive equipment, home medical supplies"
+  },
+  {
+    "Glossary Term": "Explanation of Benefits",
+    "Term Definition": "This is a summary from your health plan of the total charges for the \nhealth care services you received and how much you and your health plan will have to pay. Synonym: EOB, benefit statement, insurance summary"
+  },
+  {
+    "Glossary Term": "Emergency Medical Condition",
+    "Term Definition": "An illness, injury, symptom (including severe pain), or condition severe enough to risk serious danger to your health if you didn’t get medical attention right away. Synonym: critical condition, urgent health issue"
+  },
+  {
+    "Glossary Term": "Emergency Medical Transportation",
+    "Term Definition": "Ambulance services for an emergency medical condition. Synonym: ambulance service, emergency transport"
+  },
+  {
+    "Glossary Term": "Emergency Room Care",
+    "Term Definition": "Services to check for an emergency medical condition and treat you to keep an emergency medical condition from getting worse. Synonym: ER service, emergency treatement"
+  },
+  {
+    "Glossary Term": "Excluded Services",
+    "Term Definition": "Health care services that your plan doesn’t pay for or cover. Synonym: non-covered services, uncovered care"
+  },
+  {
+    "Glossary Term": "Formulary",
+    "Term Definition": "A list of drugs your plan covers.  A formulary may include how much your share of the cost is for each drug. Synonym: drug list, approved medications"
+  },
+  {
+    "Glossary Term": "Grievance",
+    "Term Definition": "A complaint that you communicate to your health insurer or plan. Synonym: complaint, concern, formal objection"
+  },
+  {
+    "Glossary Term": "Good Faith Estimate (GFE)",
+    "Term Definition": "An estimate from a health care provider or facility for the expected costs of \nitems or services. Synonym: cost estimate, projected billing"
+  },
+  {
+    "Glossary Term": "Health Insurance",
+    "Term Definition": "A contract that requires a health insurer to pay some or all of your health care costs in exchange for a premium. Synonym: medical coverage, insurance policy"
+  },
+  {
+    "Glossary Term": "In-network coinsurance",
+    "Term Definition": "Your share (for example, 20%) of the allowed amount for covered healthcare services. Synonym: preferred provider cost-sharing, network percentage"
+  },
+  {
+    "Glossary Term": "In-network copayment",
+    "Term Definition": "A fixed amount (for example, $15) you pay for covered health care services to providers who contract with your health insurance or plan. Synonym: network copay, preferred provider fee"
+  },
+  {
+    "Glossary Term": "In-network providers",
+    "Term Definition": "Providers or facilities that have a contract with your health plan to provide \nservices for plan members at certain costs. Synonym: preferred providers, participating doctors, contracted physicians"
+  },
+  {
+    "Glossary Term": "Insured",
+    "Term Definition": "Someone with health insurance (this can include people with insurance through their employer or health insurance they bought through the Health Insurance Marketplace®, directly from an insurance company or through an insurance agent or broker, Medicare, Medicaid, or TRICARE). Synonym: policyholder, covered individual"
+  },
+  {
+    "Glossary Term": "Maximum Out-of-pocket limit",
+    "Term Definition": "Yearly amount the federal government sets as the most each individual or family can be required to pay in cost sharing during the plan year for covered, in-network services. Synonym: out-of-pocket maximum, spending cap"
+  },
+  {
+    "Glossary Term": "Medically Necessary",
+    "Term Definition": "Health care services or supplies needed to prevent, diagnose, or treat an illness, injury, condition, disease, or its symptoms, including habilitation, and that meet accepted standards of medicine.  Synonym: essential care, required treatment"
+  },
+  {
+    "Glossary Term": "Network",
+    "Term Definition": "The facilities, providers and suppliers your health insurer or plan has contracted with to provide health care services. Synonym: provider network, care network"
+  },
+  {
+    "Glossary Term": "No Surprises Act",
+    "Term Definition": "A federal law that provides protections against getting surprise medical bills for out-\nof-network emergency services, some out-of-network non-emergency services related to a patient visit to an in-network facility, and out-of-network air ambulance services. Synonym: surprise billing protection, balance billing law"
+  },
+  {
+    "Glossary Term": "Notice and Consent Form",
+    "Term Definition": "A form you may get from out-of-network providers or facilities that tells you \nabout your rights and protections against surprise medical bills and that gives you the option to waive those rights. Synonym: disclosure form, patient agreement, informed consent"
+  },
+  {
+    "Glossary Term": "Out-of-network coinsurance",
+    "Term Definition": "Your share (for example, 40%) of the allowed amount for covered health care services to providers who don’t contract with your health insurance or plan. Synonym: external provider percentage, non-network cost-sharing"
+  },
+  {
+    "Glossary Term": "Out-of-network copayment",
+    "Term Definition": "A fixed amount (for example, $30) you pay for covered health care services from providers who do not contract with your health insurance or plan. Synonym: non-network copay, external provider fee"
+  },
+  {
+    "Glossary Term": "Out-of-network Provider",
+    "Term Definition": "A provider who doesn’t have a contract with your plan to provide services. Synonym: external physician, non-participating provider"
+  },
+  {
+    "Glossary Term": "Out-of-pocket Limit",
+    "Term Definition": "The most you could pay during a coverage period (usually one year) for your share \nof the costs of covered services. Synonym: spending cap, maximum personal expense, cost cieling"
+  },
+  {
+    "Glossary Term": "Plan",
+    "Term Definition": "Health coverage issued to you directly (individual plan) or through an employer, union or other group sponsor (employer group plan) that provides coverage for certain health care costs. Synonym: policy, coverage option, insurance package"
+  },
+  {
+    "Glossary Term": "Preferred Provider",
+    "Term Definition": "A provider who has a contract with your health insurer or plan who has agreed to \nprovide services to members of a plan. Synonym: in-network doctor, contracted physician"
+  },
+  {
+    "Glossary Term": "Premium",
+    "Term Definition": "The amount that must be paid for your health insurance or plan. Synonym: monthly payment, insurnace fee, coverage cost"
+  },
+  {
+    "Glossary Term": "Provider",
+    "Term Definition": "An individual or facility that provides health care services. Synonym: healthcare professional, medical practioner"
+  },
+  {
+    "Glossary Term": "Referral",
+    "Term Definition": "A written order from your primary care provider for you to see a specialist or get certain health care services. Synonym: specialist recommendation, care direction"
+  },
+  {
+    "Glossary Term": "Screening",
+    "Term Definition": "A type of preventive care that includes tests or exams to detect the presence of something, usually performed when you have no symptoms, signs, or prevailing medical history of a disease or condition. Synonym: prevention test, health check, early detection exam"
+  },
+  {
+    "Glossary Term": "Self-pay",
+    "Term Definition": "When someone who has health insurance chooses to pay their health care costs out of pocket without using health insurance. Synonym: out-of-pocket payment, direct payment"
+  },
+  {
+    "Glossary Term": "Specialist",
+    "Term Definition": "A provider focusing on a specific area of medicine or a group of patients to diagnose, manage, prevent, or treat certain types of symptoms and conditions. Synonym: medical expert, specialized physician"
+  },
+  {
+    "Glossary Term": "Surprise Bill",
+    "Term Definition": "An unexpected balance bill for certain types of out-of-network costs your insurance didn’t \ncover. Synonym: unexpected charge, balance billing"
+  },
+  {
+    "Glossary Term": "Uninsured",
+    "Term Definition": "Someone without health care coverage. Synonym: without coverage, non-insured, lacking insurance"
+  },
+  {
+    "Glossary Term": "Urgent Care",
+    "Term Definition": "Care for an illness, injury, or condition serious enough that a reasonable person would seek care right away, but not so severe as to require emergency room care. Synonym: immediate care, prompt medical service"
+  }
+]
