@@ -4,7 +4,7 @@ import QuizLanding from './pages/QuizLanding';
 import QuizOnboarding from './pages/QuizOnboarding';
 import Home from './pages/Home';
 import Navbar from './components/navBar';
-import QuizPage from './pages/QuizPage';
+import QuizPage from './pages/QuizPage/QuizPage';
 
 const App = () =>
 {
