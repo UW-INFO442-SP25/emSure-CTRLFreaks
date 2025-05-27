@@ -18,7 +18,7 @@ const Glossary = () =>
     const filteredData = activeQuery 
         ? data.filter(item =>
             item.term.toLowerCase().includes(activeQuery.toLowerCase()) 
-            // item.definition.toLowerCase().includes(activeQuery.toLowerCase()) //filtering by def makes it confusing and results become irrelevant
+            // || item.definition.toLowerCase().includes(activeQuery.toLowerCase()) //filtering by def makes it confusing and results become irrelevant
         )
         : data;  
 
