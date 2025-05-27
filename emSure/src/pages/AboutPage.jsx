@@ -2,11 +2,11 @@ import React from 'react';
 
 const AboutPage = () => {
   const team = [
-    { name: "Simran Gupta", role: "Researcher", img: "/imgs/simran-pfp.png" },
-    { name: "Jason Cabusao", role: "UX Designer & Developer", img: "/imgs/simran-pfp.png" },
     { name: "Maryory Ajpop", role: "Developer", img: "/imgs/maryory-pfp.JPG" },
-    { name: "Dawn Nguyen", role: "Project Manager", img: "/imgs/dawn-pfp.png" },
+    { name: "Jason Cabusao", role: "UX Designer & Developer", img: "/imgs/simran-pfp.png" },
     { name: "Lei Ann Dela Cruz", role: "UX Designer & Developer", img: "/imgs/simran-pfp.png" },
+    { name: "Simran Gupta", role: "Researcher", img: "/imgs/simran-pfp.png" },
+    { name: "Dawn Nguyen", role: "Project Manager", img: "/imgs/dawn-pfp.png" }
   ];
 
   return (
@@ -19,6 +19,7 @@ const AboutPage = () => {
             <p>
               How might we support newly employed individuals in confidently understanding and selecting healthcare insurance plans, so they feel secure in their coverage? 
             </p>
+            <br />
             <p>
               We focused on tackling SDG Goal 3: Good Health and Well-Being, with the hope of increasing access to “quality health services without facing financial hardship.” 
            
@@ -27,10 +28,10 @@ const AboutPage = () => {
           </div>
           <div className="aboutpage-mission-video">
             <iframe 
-              width="560" 
-              height="315" 
+              // width="560" 
+              // height="315" 
               src="https://www.youtube.com/embed/_J8lkDUStAw?si=7DuneENoUKeFQvhp&amp;start=1" 
-              title="YouTube video player" 
+              title="YouTube video player"
               frameborder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
               referrerpolicy="strict-origin-when-cross-origin" 
