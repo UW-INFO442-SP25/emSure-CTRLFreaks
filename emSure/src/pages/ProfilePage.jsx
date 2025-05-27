@@ -1,14 +1,36 @@
-import React from 'react';
-import { MasteryBar } from '../components/MasteryBar.jsx';
+import React, { useState, useEffect } from 'react';
+import { getDatabase, ref, onValue } from 'firebase/database';
+import { getAuth } from 'firebase/auth';
+
+
 
 export default function ProfilePage() {
-  const user = {
-    avatar: 'https://placehold.co/200',
-    username: 'goatluvr',
-    first: 'Claire',
-    last: 'Cottril',
-    email: 'goatluvr@uw.edu',
-  };
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    const auth = getAuth();
+    const currentUser = auth.currentUser;
+
+    if (!currentUser) return;
+
+    const db = getDatabase();
+    const userRef = ref(db, `userData/${currentUser.uid}`);
+
+    const unsubscribe = onValue(userRef, (snapshot) => {
+      if (snapshot.exists()) {
+        setUserData(snapshot.val());
+      } else {
+        console.log("No user data found in Realtime DB");
+      }
+    });
+
+    return () => unsubscribe(); // cleanup listener
+  }, []);
+
+  if (!userData) {
+    return <div className="profile-body"><h1>Loading profile...</h1></div>;
+  }
+
 
   return (
     <div className="profile-body">
@@ -48,26 +70,26 @@ export default function ProfilePage() {
         <div className="user-info">
           <div className="photo-username">
             <img className='pfp' src="../../public/imgs/dawn-pfp.png" alt="pfp"/>
-            <h2>GoatLuvr</h2>
+            <h2>{userData.username}</h2>
           </div>
 
           <div className="user-text">
             <div className="title-info">
               <p>firstname</p>
               <div className="user-input">
-                <p>Claire</p>
+                <p>{userData.firstName}</p>
               </div>
             </div>
             <div className="title-info">
               <p>lastname</p>
               <div className="user-input">
-                <p>Cotril</p>
+                <p>{userData.lastName}</p>
               </div>
             </div>
             <div className="title-info">
               <p>Email Address</p>
               <div className="user-input">
-                <p>urmom@gmail.com</p>
+                <p>{userData.email}</p>
               </div>
             </div>
           </div>

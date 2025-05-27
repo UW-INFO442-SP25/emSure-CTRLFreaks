@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { auth, db } from '../firebase';
+import { getDatabase, ref, set } from 'firebase/database';
 import {
   createUserWithEmailAndPassword,
   setPersistence,
@@ -37,7 +38,7 @@ export default function SignupPage() {
       localStorage.setItem('rememberMe', rememberMe ? 'true' : 'false');
 
       // checks if username already exists
-      const usersRef = collection(db, "users");
+      const usersRef = collection(db, "userData");
       const q = query(usersRef, where("username", "==", username));
       const querySnapshot = await getDocs(q);
 
@@ -51,12 +52,26 @@ export default function SignupPage() {
       const user = userCredential.user;
 
       // saves user info in firestore
-      await setDoc(doc(db, "users", user.uid), {
+      await setDoc(doc(db, "userData", user.uid), {
         firstName,
         lastName,
         username,
         email,
       });
+
+      // Save user info in Realtime Database
+      const rtdb = getDatabase();
+      const userRef = ref(rtdb, `userData/${user.uid}`);
+      await set(userRef, {
+        uid: user.uid,
+        firstName,
+        lastName,
+        username,
+        email,
+        createdAt: new Date().toISOString()
+      });
+      console.log("User added to Firestore and Realtime DB.");
+
 
       navigate('/');
     } catch (err) {
