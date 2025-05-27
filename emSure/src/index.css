@@ -1761,4 +1761,7 @@ margin-bottom: 4px;
     background: #B5DADC;
 }
 
+.title-info > p {
+    color: #084E5A;
+}
 
