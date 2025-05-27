@@ -781,55 +781,62 @@ p {
 /* Glossary Card - BEGINNING */
 .glossary-card {
     background-color: transparent;
-    height: 300px;
+    height: 350px;
     width: 450px;
-    perspective: 1000px;
 }
 
 .glossary-card-content {
-  position: relative;
   height: 100%;
+  max-height: 100%;
   width: 100%;
-  transition: transform 1.2s;
-  transform-style: preserve-3d;
   background-color: white;
-  padding: 30px;
+  padding: 2.5rem;
   border: solid 4px #45AAB8;
   border-radius: 1rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.glossary-card-content:hover {
-  transform: rotateY(180deg);
-  /* background-color: #45AAB8; */
-}
-
-.card-back, .card-front {
-  position: absolute;
-  backface-visibility: hidden;
-  max-width: 100%;
-  max-height: 100%;
+  gap: 1rem;
+  overflow: hidden;
 }
 
 .card-back {
-  transform: rotateY(180deg);
-  color: black;
-  overflow-y: scroll;
-  padding: 0 30px;
+  display: none;
+}
+
+.card-back.flipped {
+  display: contents;
 }
 
 .card-back p {
   line-height: 1.5;
-}
+} 
 
 .card-front {
-    color: #45AAB8;
-    margin-bottom: 0.5rem;
+  display: contents;
+  color: #45AAB8;
 }
 
+.card-front.flipped {
+  display: none;
+}
 
+.flip-card {
+  background-color: #45AAB8;
+  padding: 0.5rem;
+  border: solid 2px white;
+  border-radius: 8px;
+  width: 20%;
+  color: white;
+  font-size: 1rem;
+}
+
+.flip-card:hover {
+  color: #45AAB8;
+  background-color: white;
+  border: solid 2px #45AAB8;
+}
 /* Glossary Card - ENDING */
 
 
@@ -864,15 +871,13 @@ p {
     }
 
     .glossary-card-content {
-      transition: none;
-      flex-direction: column;
       padding: 1rem;
     }
 
     .glossary-card-content:hover {
       transform: none;
     }
-
+    
     .card-back, .card-front {
       backface-visibility: visible;
       position: relative;
@@ -883,7 +888,6 @@ p {
     }
 
     .card-back {
-      transform: none;
       padding: 0;
     }
 
