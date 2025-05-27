@@ -1,68 +1,103 @@
-import React from 'react';
-import { MasteryBar } from '../components/MasteryBar.jsx';
+import React, { useState, useEffect } from 'react';
+import { getDatabase, ref, onValue } from 'firebase/database';
+import { getAuth } from 'firebase/auth';
+
+
 
 export default function ProfilePage() {
-  const mastery = [ // currently hard coded
-    { label: 'Health Insurance Basics', value: 0.8 },
-    { label: 'Choosing and Using a Health Plan', value: 0.6 },
-    { label: 'Costs and Payments', value: 0.4 },
-    { label: 'Costs and Payments', value: 0.5 },
-    { label: 'Costs and Payments', value: 0.3 },
-  ];
+  const [userData, setUserData] = useState(null);
 
-  const user = {
-    avatar: 'https://placehold.co/200',
-    username: 'goatluvr',
-    first: 'Claire',
-    last: 'Cottril',
-    email: 'goatluvr@uw.edu',
-  };
+  useEffect(() => {
+    const auth = getAuth();
+    const currentUser = auth.currentUser;
+
+    if (!currentUser) return;
+
+    const db = getDatabase();
+    const userRef = ref(db, `userData/${currentUser.uid}`);
+
+    const unsubscribe = onValue(userRef, (snapshot) => {
+      if (snapshot.exists()) {
+        setUserData(snapshot.val());
+      } else {
+        console.log("No user data found in Realtime DB");
+      }
+    });
+
+    return () => unsubscribe(); // cleanup listener
+  }, []);
+
+  if (!userData) {
+    return <div className="profile-body"><h1>Loading profile...</h1></div>;
+  }
+
 
   return (
-    <div className="profile-bg-container">
+    <div className="profile-body">
       <h1>Profile</h1>
-      
-      <div className="profile-container">
-        <section className="topic-mastery">
-          <h2>Topic Mastery</h2>
+      <div className="profile-content">
 
-          {mastery.map((item, i) => (
-            <div key={i} className="mastery-row">
-              <span className="topic-label">{item.label}</span>
+        <div className="past-attempts-section">
 
-              <MasteryBar value={item.value} />
+          <h2>Past Attempts</h2>
+          <div className="past-scores">
+            <div className="titles">
+              <p className="title">Date</p>
+              <p className="title">%</p>
+              <p className="title">Score</p>
             </div>
-          ))}
+            <div className="past-score-cards">
+              <div className="score-card">
+                <h3 className="title">19 Apr 2025</h3>
+                <h3 className="title">100%</h3>
+                <h3 className="title">15/15</h3>
+              </div>
+              <div className="score-card">
+                <h3 className="title">19 Apr 2025</h3>
+                <h3 className="title">100%</h3>
+                <h3 className="title">15/15</h3>
+              </div>
+              <div className="score-card">
+                <h3 className="title">19 Apr 2025</h3>
+                <h3 className="title">100%</h3>
+                <h3 className="title">15/15</h3>
+              </div>
+            </div>
 
-        </section>
+          </div>
+        </div>
 
-        <div className="profile-info">
-          <div className="avatar-wrapper">
-            <img src={user.avatar} alt="avatar" className="avatar" />
+        <div className="user-info">
+          <div className="photo-username">
+            <img className='pfp' src="../../public/imgs/dawn-pfp.png" alt="pfp"/>
+            <h2>{userData.username}</h2>
           </div>
 
-          <h2 className="username">{user.username}</h2>
+          <div className="user-text">
+            <div className="title-info">
+              <p>firstname</p>
+              <div className="user-input">
+                <p>{userData.firstName}</p>
+              </div>
+            </div>
+            <div className="title-info">
+              <p>lastname</p>
+              <div className="user-input">
+                <p>{userData.lastName}</p>
+              </div>
+            </div>
+            <div className="title-info">
+              <p>Email Address</p>
+              <div className="user-input">
+                <p>{userData.email}</p>
+              </div>
+            </div>
+          </div>
 
-          <ul className="details">
-            <li>
-              <label>First Name</label>
-              <p className="pill">{user.first}</p>
-            </li>
-            <li>
-              <label>Last Name</label>
-              <p className="pill">{user.last}</p>
-            </li>
-            <li>
-              <label>Email Address</label>
-              <p className="pill">{user.email}</p>
-            </li>
-          </ul>
         </div>
 
       </div>
-      
     </div>
-
   );
 
 }

@@ -66,7 +66,7 @@ export default function LoginPage() {
     }
 
     try {
-      const usersRef = collection(db, 'users');
+      const usersRef = collection(db, 'userData');
       const q = query(usersRef, where('username', '==', username));
       const querySnapshot = await getDocs(q);
 
