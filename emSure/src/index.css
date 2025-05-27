@@ -493,6 +493,15 @@ p {
     cursor: pointer;
     padding: 4px;
   }
+
+  /* .user-name {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    color: var(--primary-color-darker); 
+  }
+   */
   
   .dropdown-menu {
     position: absolute;
@@ -534,7 +543,7 @@ p {
   }
   
   
-/* NavBar Comp - ENDING */
+/* NavBar styling - ENDING */
 
 /* Quiz Page - BEGINNING */
 .quiz-body {
