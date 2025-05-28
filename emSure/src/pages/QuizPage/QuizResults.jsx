@@ -1,13 +1,45 @@
-import React, { useState } from 'react';
+import React, { useEffect, } from 'react';
 import { PrimaryButton, PrimaryLightButton, StaticOptionButton, SecondaryButton } from '../../components/buttons';
+import { getDatabase, ref, push, set } from "firebase/database";
+import { getAuth } from "firebase/auth";
 
 
 
 export function QuizResults(props) {
-  const { quizScore } = props;
-  const { shuffledQuestions } = props;
-  const { incorrectAnswers } = props;
-  const { handleRestartQuiz } = props;
+  const { quizScore, shuffledQuestions, incorrectAnswers, handleRestartQuiz } = props;
+
+  // useEffect(() => {
+  //   const saveQuizResult = async () => {
+  //     const auth = getAuth();
+  //     const user = auth.currentUser;
+
+  //     if (!user) {
+  //       console.error("No authenticated user.");
+  //       return;
+  //     }
+
+  //     const rtdb = getDatabase();
+  //     const quizRef = ref(rtdb, `userData/${user.uid}/quizzes`);
+
+  //     const newQuizRef = push(quizRef); // Creates a unique ID
+  //     const quizData = {
+  //       score: quizScore.correct,
+  //       totalQuestions: shuffledQuestions.length,
+  //       incorrectAnswers,
+  //       completedAt: new Date().toISOString(),
+  //     };
+
+  //     try {
+  //       await set(newQuizRef, quizData);
+  //       console.log("Quiz result saved.");
+  //     } catch (error) {
+  //       console.error("Error saving quiz result:", error);
+  //     }
+  //   };
+
+  //   saveQuizResult();
+  // }, []);
+
 
   const incorrectAnswerCards = incorrectAnswers.map(incorrectAnswer => {
     return (
