@@ -6,26 +6,46 @@ import { getAuth } from 'firebase/auth';
 
 export default function ProfilePage() {
   const [userData, setUserData] = useState(null);
+  const [quizAttempts, setQuizAttempts] = useState([]);
+
 
   useEffect(() => {
     const auth = getAuth();
-    const currentUser = auth.currentUser;
 
-    if (!currentUser) return;
+    const unsubscribeAuth = auth.onAuthStateChanged((currentUser) => {
+      if (!currentUser) return;
 
-    const db = getDatabase();
-    const userRef = ref(db, `userData/${currentUser.uid}`);
+      const db = getDatabase();
+      const userRef = ref(db, `userData/${currentUser.uid}`);
 
-    const unsubscribe = onValue(userRef, (snapshot) => {
-      if (snapshot.exists()) {
-        setUserData(snapshot.val());
-      } else {
-        console.log("No user data found in Realtime DB");
-      }
+      const unsubscribeDB = onValue(userRef, (snapshot) => {
+        if (snapshot.exists()) {
+          const data = snapshot.val();
+          setUserData(data);
+
+          if (data.quizzes) {
+            const attemptsArray = Object.entries(data.quizzes).map(([id, quiz]) => ({
+              id,
+              ...quiz,
+            }));
+            attemptsArray.sort((a, b) => new Date(b.completedAt) - new Date(a.completedAt));
+            setQuizAttempts(attemptsArray);
+          } else {
+            setQuizAttempts([]);
+          }
+        } else {
+          console.log("No user data found in Realtime DB");
+        }
+      });
+
+      // Cleanup DB listener when component unmounts
+      return () => unsubscribeDB();
     });
 
-    return () => unsubscribe(); // cleanup listener
+    // Cleanup auth listener on unmount
+    return () => unsubscribeAuth();
   }, []);
+
 
   if (!userData) {
     return <div className="profile-body"><h1>Loading profile...</h1></div>;
@@ -47,21 +67,24 @@ export default function ProfilePage() {
               <p className="title">Score</p>
             </div>
             <div className="past-score-cards">
-              <div className="score-card">
-                <h3 className="title">19 Apr 2025</h3>
-                <h3 className="title">100%</h3>
-                <h3 className="title">15/15</h3>
-              </div>
-              <div className="score-card">
-                <h3 className="title">19 Apr 2025</h3>
-                <h3 className="title">100%</h3>
-                <h3 className="title">15/15</h3>
-              </div>
-              <div className="score-card">
-                <h3 className="title">19 Apr 2025</h3>
-                <h3 className="title">100%</h3>
-                <h3 className="title">15/15</h3>
-              </div>
+            {quizAttempts.length === 0 ? (
+                <p>No past quiz attempts yet.</p>
+              ) : (
+                quizAttempts.map((attempt) => {
+                  const percentage = Math.round((attempt.score / attempt.totalQuestions) * 100);
+                  const formattedDate = new Date(attempt.completedAt).toLocaleDateString("en-US", {
+                    year: "numeric", month: "short", day: "numeric"
+                  });
+
+                  return (
+                    <div className="score-card" key={attempt.id}>
+                      <h3 className="title">{formattedDate}</h3>
+                      <h3 className="title">{percentage}%</h3>
+                      <h3 className="title">{attempt.score}/{attempt.totalQuestions}</h3>
+                    </div>
+                  );
+                })
+              )}
             </div>
 
           </div>
@@ -69,7 +92,7 @@ export default function ProfilePage() {
 
         <div className="user-info">
           <div className="photo-username">
-            <img className='pfp' src="../../public/imgs/dawn-pfp.png" alt="pfp"/>
+            <img className='pfp' src="../../public/imgs/default-pfp.png" alt="pfp"/>
             <h2>{userData.username}</h2>
           </div>
 
