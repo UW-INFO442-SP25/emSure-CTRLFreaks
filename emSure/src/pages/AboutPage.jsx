@@ -3,8 +3,8 @@ import React from 'react';
 const AboutPage = () => {
   const team = [
     { name: "Maryory Ajpop", role: "Developer", img: "/imgs/maryory-pfp.JPG" },
-    { name: "Jason Cabusao", role: "UX Designer & Developer", img: "/imgs/simran-pfp.png" },
-    { name: "Lei Ann Dela Cruz", role: "UX Designer & Developer", img: "/imgs/simran-pfp.png" },
+    { name: "Jason Cabusao", role: "UX Designer & Developer", img: "/imgs/jason-pfp.png" },
+    { name: "Lei Ann Dela Cruz", role: "UX Designer & Developer", img: "/imgs/leiann-pfp.jpg" },
     { name: "Simran Gupta", role: "Researcher", img: "/imgs/simran-pfp.png" },
     { name: "Dawn Nguyen", role: "Project Manager", img: "/imgs/dawn-pfp.png" }
   ];

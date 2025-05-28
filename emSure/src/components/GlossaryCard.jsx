@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const GlossaryCard = ( {term, definition} ) => 
+const GlossaryCard = ({term, definition, synonym}) => 
 {
     const [ isFlipped, setIsFlipped ] = useState(false);
 
@@ -23,6 +23,11 @@ const GlossaryCard = ( {term, definition} ) =>
                 <div className={`card-back ${isFlipped ? 'flipped' : ''}`}>
 
                     <p>{ definition }</p>
+
+                    <p className='synonym'>
+                        <span className='synonym-bold'>Synonym(s): </span> 
+                         { synonym }
+                    </p>
 
                 </div>
 

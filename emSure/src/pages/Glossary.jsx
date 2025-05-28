@@ -91,6 +91,7 @@ const Glossary = () =>
                                     key={ index } 
                                     term={ item.term } 
                                     definition={ item.definition } 
+                                    synonym={ item.synonym }
                                 /> 
                             ))
                         ) : ( <p>No results found.</p> )

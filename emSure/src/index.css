@@ -844,7 +844,7 @@ p {
 .suggestion-list {
     display: flex;
     flex-direction: column;
-    width: 97.7%;
+    width: 100%;
     list-style: none;
     /* height: 6rem; */
     max-height: 8rem;
@@ -853,10 +853,11 @@ p {
     border: solid 1px #919191;
     border-top: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    border-radius: 1rem;
 }
 
 .suggestion-item {
-    border: solid 1px #919191;
+    /* border: solid 1px #919191; */
     border-top: none;
     border-left: none;
     border-right: none;
@@ -864,6 +865,7 @@ p {
     padding: 0.5rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    text-align: left;
 }
 
 .suggestion-item:last-child {
@@ -944,6 +946,14 @@ p {
   background-color: white;
   border: solid 2px #45AAB8;
 }
+
+.synonym-bold {
+    font-weight: bold;
+}
+
+.synonym {
+    font-size: 1rem;
+}
 /* Glossary Card - ENDING */
 
 
@@ -1000,6 +1010,10 @@ p {
 
     .card-back p {
       font-size: 1rem;
+    }
+
+    .card-back .synonym {
+        font-size: 0.8rem;
     }
 }
 /* Media Queries - ENDING */
@@ -1466,10 +1480,13 @@ p {
 
 /* ABOUT US PAGE - BEGINNING */
 .aboutpage-main-passage {
-  max-width: 1200px;
+  /* max-width: 1200px; */
+  height: 100vh;
+  width: 100%;
   margin: 0 auto;
   padding: 60px 20px;
-  font-family: Arial, sans-serif;
+  margin-bottom: 0;
+  overflow: hidden;
 }
 
 .aboutpage-mission {
@@ -1478,7 +1495,6 @@ p {
   align-items: center;
   gap: 40px;
   margin-bottom: 80px;
-  margin-top: 5rem;
 }
 
 .aboutpage-mission-text {

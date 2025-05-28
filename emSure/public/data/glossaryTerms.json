@@ -1,7 +1,8 @@
 [
   {
     "term": "Allowed Amount",
-    "definition": "This is the maximum payment the plan will pay for a covered health care service.  May \nalso be called “eligible expense,” “payment allowance,” or “negotiated rate.” Synonym: eligible expense, payment allowance, and negotiated rate"
+    "definition": "This is the maximum payment the plan will pay for a covered health care service.  May also be called “eligible expense,” “payment allowance,” or “negotiated rate.”",
+    "synonym": "eligible expense, payment allowance, and negotiated rate."
   },
   {
     "term": "Appeal",
@@ -9,7 +10,7 @@
   },
   {
     "term": "Balance Billing",
-    "definition": "When a provider bills you for the balance remaining on the bill that your plan doesn’t \ncover. This amount is the difference between the actual billed amount and the allowed amount. Synonym: suprise billing, out-of-network billing"
+    "definition": "When a provider bills you for the balance remaining on the bill that your plan doesn't \ncover. This amount is the difference between the actual billed amount and the allowed amount. Synonym: suprise billing, out-of-network billing"
   },
   {
     "term": "Claim",
