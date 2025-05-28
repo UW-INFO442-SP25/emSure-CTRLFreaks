@@ -34,8 +34,7 @@ export default function LoginPage() {
       await setPersistence(auth, persistenceType);
       localStorage.setItem('rememberMe', rememberMe ? 'true' : 'false');
 
-      // gets email by username
-      const usersRef = collection(db, 'userData');
+      const usersRef = collection(db, 'users');
       const q = query(usersRef, where('username', '==', username));
       const querySnapshot = await getDocs(q);
 

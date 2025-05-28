@@ -37,8 +37,7 @@ export default function SignupPage() {
       await setPersistence(auth, persistenceType);
       localStorage.setItem('rememberMe', rememberMe ? 'true' : 'false');
 
-      // checks if username already exists
-      const usersRef = collection(db, "userData");
+      const usersRef = collection(db, "users");
       const q = query(usersRef, where("username", "==", username));
       const querySnapshot = await getDocs(q);
 
@@ -47,12 +46,10 @@ export default function SignupPage() {
         return;
       }
 
-      // creates firebase user
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      // saves user info in firestore
-      await setDoc(doc(db, "userData", user.uid), {
+      await setDoc(doc(db, "users", user.uid), {
         firstName,
         lastName,
         username,
