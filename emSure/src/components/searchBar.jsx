@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SearchBar = ( { query, setQuery, onEnter } ) => 
+const SearchBar = ( { query, setQuery, onEnter, onChange } ) => 
 {
     const handleKeyDown = (e) => 
     {
@@ -24,7 +24,7 @@ const SearchBar = ( { query, setQuery, onEnter } ) =>
                 placeholder="Search for terms..." 
                 value={ query }
                 className='search-bar-input' 
-                onChange={ (e) => setQuery(e.target.value) }
+                onChange={ onChange }
                 onKeyDown= { handleKeyDown }
                 
             />

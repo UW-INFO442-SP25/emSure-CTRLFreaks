@@ -712,12 +712,16 @@ p {
     padding: 13rem 6rem 6rem;
     text-align: center;
     flex-direction: column;
-    gap: 3.5rem;
+    /* gap: 3.5rem; */
     align-items: center;
     overflow-y: scroll;
     height: 100vh;
     scrollbar-width: none;
     width: 100%;
+}
+
+.content-container.glossary h1 {
+    margin-bottom: 3.5rem;
 }
 /* Glossary Page - ENDING */
 
@@ -739,6 +743,7 @@ p {
     border: solid 1px #919191;
     border-radius: 1.5rem;
     padding: 10px;
+    /* padding-bottom: 0; */
 }
 
 .search-bar-input {
@@ -759,13 +764,50 @@ p {
     justify-content: space-around;
     align-items: center;
     gap: 3rem;
-
+    margin-top: 3.5rem;
 }
 
 .search-bar-input:focus {
     outline: none;
+}
 
-  }
+.search-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.suggestion-list {
+    display: flex;
+    flex-direction: column;
+    width: 97.7%;
+    list-style: none;
+    /* height: 6rem; */
+    max-height: 8rem;
+    overflow-y: auto;
+    justify-self: center;
+    border: solid 1px #919191;
+    border-top: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.suggestion-item {
+    border: solid 1px #919191;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: white;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item:hover {
+    background-color: lightgray;
+}
 /* Search Bar - ENDING */
 
 
@@ -851,7 +893,7 @@ p {
     .content-container.glossary {
         padding: 8rem 0 4rem 0;
         flex-direction: column;
-        gap: 3rem;
+        /* gap: 3rem; */
         align-items: center;
         overflow-y: scroll;
         height: 100vh;
