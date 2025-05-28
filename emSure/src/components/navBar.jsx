@@ -55,6 +55,10 @@ export default function Navbar() {
     setMenuOpen(prev => !prev);
   };
 
+  const handleNavClick = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -65,23 +69,23 @@ export default function Navbar() {
         <div className="navbar-right">
           <ul ref={menuRef} className={`nav-menu ${menuOpen ? 'show-menu' : ''}`}>
             <li className="nav-item">
-              <Link to="/glossary" className={location.pathname === "/glossary" ? "active-nav-link" : ""}>Learn</Link>
+              <Link to="/glossary" onClick={handleNavClick} className={location.pathname === "/glossary" ? "active-nav-link" : ""}>Learn</Link>
             </li>
             <li className="nav-item">
-              <Link to="/quiz" className={location.pathname === "/quiz" ? "active-nav-link" : ""}>Quiz</Link>
+              <Link to="/quiz" onClick={handleNavClick} className={location.pathname === "/quiz" ? "active-nav-link" : ""}>Quiz</Link>
             </li>
             <li className="nav-item">
-              <Link to="/about" className={location.pathname === "/about" ? "active-nav-link" : ""}>About</Link>
+              <Link to="/about" onClick={handleNavClick} className={location.pathname === "/about" ? "active-nav-link" : ""}>About</Link>
             </li>
             {!user && (
               <li className="nav-item">
-                <Link to="/login" className={location.pathname === "/login" ? "active-nav-link" : ""}>Log in</Link>
+                <Link to="/login" onClick={handleNavClick} className={location.pathname === "/login" ? "active-nav-link" : ""}>Log in</Link>
               </li>
             )}
           </ul>
 
           {!user ? (
-            <Link to="/signup" className={`sign-up-btn ${location.pathname === "/signup" ? "active-nav-link" : ""}`}>
+            <Link to="/signup" onClick={handleNavClick} className={`sign-up-btn ${location.pathname === "/signup" ? "active-nav-link" : ""}`}>
               Sign up
             </Link>
           ) : (
