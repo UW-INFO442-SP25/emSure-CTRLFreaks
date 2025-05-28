@@ -506,8 +506,10 @@ p {
     color: var(--primary-color);
   }
   
-  .active-nav-link {
+  .nav-item a.active-nav-link {
     color: var(--primary-color-darker);
+    font-weight: 600;
+    text-decoration: underline;
   }
   
   .sign-up-btn {
