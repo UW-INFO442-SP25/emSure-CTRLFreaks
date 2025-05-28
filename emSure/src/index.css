@@ -444,17 +444,17 @@ p {
 
 /* NAVBAR STYLING */
 .navbar {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 80px;
     background-color: var(--white);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    z-index: 100;
-}
-
-.navbar-container {
+    z-index: 1000;
+  }
+  
+  .navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -462,102 +462,104 @@ p {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
-}
-
-.navbar-left {
+  }
+  
+  .navbar-left {
     display: flex;
     align-items: center;
-}
-
-.navbar-logo {
+  }
+  
+  .navbar-logo {
     font-size: 1.8rem;
     font-weight: 700;
     color: black;
     text-decoration: none;
-}
-
-.navbar-logo:hover {
+  }
+  
+  .navbar-logo:hover {
     color: var(--primary-color-darker);
-}
-
-.navbar-right {
+  }
+  
+  .navbar-right {
     display: flex;
     align-items: center;
-}
-
-.nav-menu {
+    gap: 1.5rem;
+  }
+  
+  .nav-menu {
     display: flex;
     list-style: none;
     align-items: center;
     gap: 2rem;
-}
-
-.nav-item a {
+    transition: max-height 0.3s ease-in-out;
+  }
+  
+  .nav-item a {
     font-size: 1rem;
     color: var(--black);
     text-decoration: none;
     transition: color 0.3s ease;
     font-weight: 500;
-}
-
-.nav-item a:hover {
-    color: var(--primary-color);
-}
-
-.active-nav-link {
-    color: var(--primary-color-darker) !important;
-    font-weight: 900;
   }
-
-
-.sign-up-btn {
+  
+  .nav-item a:hover {
+    color: var(--primary-color);
+  }
+  
+  .active-nav-link {
+    color: var(--primary-color-darker);
+  }
+  
+  .sign-up-btn {
     background-color: var(--primary-color);
     color: var(--white) !important;
-    padding: 0.75rem 1.5rem;
-    border-radius: 2rem;
-}
-
-.sign-up-btn:hover {
-    background-color: var(--secondary-color-darker);
+    padding: 0.6rem 1.4rem;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none !important;
+  }
+  
+  .sign-up-btn:hover {
+    background-color: var(--primary-color-darker);
     color: var(--white) !important;
-}
-
-.profile-container {
+  }
+  
+  .profile-container {
     position: relative;
   }
-
+  
   .profile-icon {
-    width: 70px;
-    height:70px;
+    width: 50px;
+    height: 50px;
     border-radius: 100%;
     object-fit: cover;
     cursor: pointer;
-    padding: 4px;
   }
-
+  
   .dropdown-menu {
     position: absolute;
-    top: 60px;
-    left: 0;
+    top: 50px;
+    right: 0;
     background-color: var(--white);
-    border: 1.5px solid var(--primary-color);
+    border: 1px solid var(--primary-color);
     border-radius: 12px;
     padding: 1rem;
     width: 160px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
     display: flex;
-    flex-direction:column;
-    align-items:flex-start;
-    z-index: 200;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 2000;
   }
-
+  
   .dropdown-title {
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 1rem;
     color: var(--black);
   }
-
+  
   .logout-button {
     background-color: var(--primary-color);
     color: white;
@@ -569,13 +571,74 @@ p {
     width: 100%;
     text-align: center;
   }
-
+  
   .logout-button:hover {
     background-color: var(--primary-color-darker);
   }
   
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 3001;
+  }
   
-/* NavBar styling - ENDING */
+  .hamburger-line {
+    height: 3px;
+    width: 100%;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  
+  .hamburger.open .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5.5px, 6px);
+  }
+  
+  .hamburger.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.open .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(5.8px, -7px);
+  }
+
+  /* navbar mobile */
+  @media (max-width: 900px) {
+    .nav-menu {
+      position: absolute;
+      top: 80px;
+      right: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+      background-color: var(--white);
+      padding: 0 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    }
+  
+    .nav-menu.show-menu {
+      max-height: 400px;
+      padding: 1rem 2rem;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  }
+
+/* Navbar - ENDING */
+
+
+
+
 
 /* Quiz Page - BEGINNING */
 .quiz-body {
