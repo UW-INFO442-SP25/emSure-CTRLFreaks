@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PrimaryButton, PrimaryLightButton, StaticOptionButton, SecondaryButton } from '../../components/buttons';
 import { ProgressBar } from '../../components/progressBar'
 import data from '../../data/quiz-questions.json';
 import { QuizResults } from './QuizResults.jsx'
+import { getDatabase, ref, push, set } from "firebase/database";
+import { getAuth } from "firebase/auth";
 
 
 export default function QuizPage(props) {
@@ -31,6 +33,37 @@ export default function QuizPage(props) {
     }
   };
 
+
+  const handleCompleteQuiz = async () => {
+    console.log("handleCompleteQuiz called!");
+
+    const auth = getAuth();
+    const user = auth.currentUser;
+
+    if (!user) {
+      console.error("No authenticated user.");
+      return;
+    }
+
+    const rtdb = getDatabase();
+    const quizRef = ref(rtdb, `userData/${user.uid}/quizzes`);
+    const newQuizRef = push(quizRef);
+
+    const quizData = {
+      score: quizScore.correct,
+      totalQuestions: shuffledQuestions.length,
+      incorrectAnswers,
+      completedAt: new Date().toISOString(),
+    };
+
+    try {
+      await set(newQuizRef, quizData);
+      console.log("Quiz result saved.");
+      setQuizCompleted(true);
+    } catch (error) {
+      console.error("Error saving quiz result:", error);
+    }
+  };
 
   const handleAnswerSelect = (option) => {
     setSelected(selected === option ? null : option);
@@ -124,7 +157,7 @@ export default function QuizPage(props) {
       return (
         < PrimaryButton
         text="Finish Quiz"
-        onClick={() => setQuizCompleted(true)}
+        onClick={handleCompleteQuiz}
         />
       )
     } else if (selected == null) {
@@ -184,6 +217,14 @@ export default function QuizPage(props) {
       console.log("no error")
     }
   })();
+
+
+
+
+
+
+
+
 
 
   if (quizCompleted) {
