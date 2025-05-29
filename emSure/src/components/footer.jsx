@@ -12,7 +12,7 @@ export default function Footer() {
         </div>
         <div className="footer-links">
           <Link to="/learn">Learn</Link>
-          <Link to="/quiz">Quiz</Link>
+          <Link to="/quiz-landing">Quiz</Link>
           <Link to="/about">About</Link>
         </div>
       </div>
