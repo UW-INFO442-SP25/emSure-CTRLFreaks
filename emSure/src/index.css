@@ -582,6 +582,83 @@ p {
 
 /* Navbar - ENDING */
 
+  /* FOOTER -- BEGINNING */
+  .footer {
+    background-color: var(--primary-color);
+    color: var(--black);
+    padding: 1rem 2rem;
+    width: 100%;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  
+  .footer-left {
+    max-width: 600px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+  
+  .footer-logo .bold {
+    font-weight: 900;
+  }
+  
+  .footer-tagline {
+    font-size: 1rem;
+    margin-top: 0.25rem;
+  }
+  
+  .footer-copy {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #333;
+  }
+  
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .footer-links a {
+    color: var(--black);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  
+    .footer-links {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .footer-copy {
+      margin-top: 0.5rem;
+    }
+  }  
+  /* FOOTER -- ENDING */
+
 
 
 
