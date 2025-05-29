@@ -1208,8 +1208,7 @@ p {
   width: 100%;
   margin: 0 auto;
   padding: 60px 20px;
-  margin-bottom: 0;
-  overflow: hidden;
+  margin-bottom: 2rem;
 }
 
 .aboutpage-mission {
@@ -1606,7 +1605,7 @@ margin-bottom: 4px;
   }
 
   .home-box-1-content p, .home-box-2-content p, .home-box-3-content p {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   /* quiz landing page  */
@@ -1623,6 +1622,14 @@ margin-bottom: 4px;
   .learn-quiz-options {
     gap: 1rem;
     width: 90%;
+  }
+
+  .learn-quiz-options .tertiary-btn h3 {
+    font-size: 1rem;
+  }
+
+  .learn-quiz-options .secondary-btn h3 {
+    font-size: 1rem;
   }
 
   .quiz-page-text {
@@ -1894,10 +1901,6 @@ margin-bottom: 4px;
     font-size: 30px;
     margin-bottom: 12px;
   }
-
-  .aboutpage-mission-text p {
-    font-size: 12px;
-  }
   
   .aboutpage-mission-video,
   .aboutpage-mission-video iframe {
@@ -1915,6 +1918,7 @@ margin-bottom: 4px;
   .aboutpage-team-members {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px 16px;
+    padding-bottom: 3rem;
   }
   
   .aboutpage-team-members .aboutpage-member:last-child:nth-child(odd) {
