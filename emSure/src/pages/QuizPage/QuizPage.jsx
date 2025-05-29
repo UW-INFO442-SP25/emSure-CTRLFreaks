@@ -35,7 +35,7 @@ export default function QuizPage(props) {
 
 
   const handleCompleteQuiz = async () => {
-    console.log("handleCompleteQuiz called!");
+    // console.log("handleCompleteQuiz called!");
 
     const auth = getAuth();
     const user = auth.currentUser;
@@ -58,7 +58,7 @@ export default function QuizPage(props) {
 
     try {
       await set(newQuizRef, quizData);
-      console.log("Quiz result saved.");
+      // console.log("Quiz result saved.");
       setQuizCompleted(true);
     } catch (error) {
       console.error("Error saving quiz result:", error);
@@ -73,7 +73,7 @@ export default function QuizPage(props) {
 
   const optionButtons = currentQuestion.options.map((option, index) => {
     const showWarning = showSelectWarning && selected === null;
-    console.log(currentQuestionIndex)
+    // console.log(currentQuestionIndex)
 
     return (
       <StaticOptionButton
@@ -96,8 +96,8 @@ export default function QuizPage(props) {
 
     setCurrentQuestionIndex(prevIndex => prevIndex + 1);
 
-    console.log("next page")
-    console.log(incorrectAnswers)
+    // console.log("next page")
+    // console.log(incorrectAnswers)
   }
 
   const handleSubmitQuestion = () =>
@@ -108,7 +108,7 @@ export default function QuizPage(props) {
 
     if (currentQuestionIndex === shuffledQuestions.length - 1) {
       setQuizReadyToComplete(true);
-      console.log("last question")
+      // console.log("last question")
     }
 
     if (correct) {
@@ -147,8 +147,8 @@ export default function QuizPage(props) {
     setQuizCompleted(false);
     setShuffledQuestions([...data].sort(() => Math.random() - 0.5).slice(0, 5));
 
-    console.log(quizScore)
-    console.log(incorrectAnswers)
+    // console.log(quizScore)
+    // console.log(incorrectAnswers)
   };
 
 
@@ -178,7 +178,7 @@ export default function QuizPage(props) {
         />
       )
     } else if (selected != null && showFeedback) {
-      console.log("next question")
+      // console.log("next question")
       return (
         < PrimaryButton
         text="Next Question"

@@ -1,8 +1,8 @@
-import React, { useState, useEffect, use } from 'react';
+import React, { useState, useEffect } from 'react';
 import SearchBar from '../components/SearchBar';
 import GlossaryCard from '../components/GlossaryCard';
 
-const Glossary = () => 
+const Learn = () => 
 {
     const [ query, setQuery ] = useState('');
     const [ activeQuery, setActiveQuery ] = useState('');
@@ -106,4 +106,4 @@ const Glossary = () =>
     );
 };
 
-export default Glossary;
+export default Learn;
