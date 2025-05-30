@@ -69,10 +69,10 @@ export default function Navbar() {
         <div className="navbar-right">
           <ul ref={menuRef} className={`nav-menu ${menuOpen ? 'show-menu' : ''}`}>
             <li className="nav-item">
-              <Link to="/glossary" onClick={handleNavClick} className={location.pathname === "/glossary" ? "active-nav-link" : ""}>Learn</Link>
+              <Link to="/learn" onClick={handleNavClick} className={location.pathname === "/learn" ? "active-nav-link" : ""}>Learn</Link>
             </li>
             <li className="nav-item">
-              <Link to="/quiz" onClick={handleNavClick} className={location.pathname === "/quiz" ? "active-nav-link" : ""}>Quiz</Link>
+              <Link to="/quiz-landing" onClick={handleNavClick} className={location.pathname === "/quiz-landing" ? "active-nav-link" : ""}>Quiz</Link>
             </li>
             <li className="nav-item">
               <Link to="/about" onClick={handleNavClick} className={location.pathname === "/about" ? "active-nav-link" : ""}>About</Link>

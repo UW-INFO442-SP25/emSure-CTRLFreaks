@@ -23,7 +23,7 @@ const Home = () =>
                     <div className='home-box-1-content'>
 
                         <h1>Take the guesswork out of health insurance</h1>
-                        <PrimaryButton text="Start Learning" />
+                        <PrimaryButton text="Start Learning" onClick={ () => navigate('/learn') }/>
                     </div>
 
                 </div>
@@ -34,9 +34,9 @@ const Home = () =>
 
                     <div className='home-box-2-content'>
 
-                        <h2>Learn New Words</h2>
+                        <h2>Test Your Learning</h2>
                         <p>Read and search through our glossary to learn about health insurance terms you don’t know</p>
-                        <SecondaryButton text="Glossary →" onClick={ () => navigate('/glossary') }/>
+                        <SecondaryButton text="Take Quiz" onClick={ () => navigate('/quiz-landing') }/>
 
                     </div>
 
@@ -48,9 +48,9 @@ const Home = () =>
 
                     <div className='home-box-3-content'>
 
-                        <h2>Test Your Learning</h2>
-                        <p>Read and search through our glossary to learn about health insurance terms you don’t know </p>
-                        <SecondaryButton text="Take Quiz →" />
+                        <h2>Learn More About Our Mission</h2>
+                        <p> Get to know our team and why chose to explore this space to help people grow their knowledge about health insurance</p>
+                        <SecondaryButton text="About" onClick={ () => navigate('/about') }/>
 
                     </div>
 

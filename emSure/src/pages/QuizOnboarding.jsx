@@ -56,7 +56,7 @@ const QuizOnboarding = () =>
                     </div>
 
                     <div className='quiz-onboarding-btns'>
-                        <TertiaryButton text="Skip Intro" />
+                        <TertiaryButton text="Skip Intro" onClick={ () => navigate('/quiz') }/>
                         <SecondaryButton 
                             onClick={ handleContinue } 
                             text= { currDialogueIndex < dialogueTop.length - 1 ? "Continue" : "Begin Quiz!" } 
