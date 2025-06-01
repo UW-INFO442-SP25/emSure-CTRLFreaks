@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import QuizLanding from './pages/QuizLanding';
 import QuizOnboarding from './pages/QuizOnboarding';
 import Home from './pages/Home';
@@ -14,6 +14,30 @@ import Footer from './components/Footer';
 import Scroll2Top from './components/scroll2top';
 import { getDatabase, ref, update as fbUpdate } from 'firebase/database';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
+
+const AppContent = () => {
+    const location = useLocation();
+    const hideFooterRoutes = ['/quiz'];
+
+    return (
+        <>
+            <Scroll2Top />
+            <Navbar />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/quiz-onboarding" element={<QuizOnboarding />} />
+                <Route path="/quiz-landing" element={<QuizLanding />} />
+                <Route path="/quiz" element={<QuizPage />} />
+                <Route path="/learn" element={<Learn />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/signup" element={<SignupPage />} />
+                <Route path="/profile" element={<ProfilePage />} />
+                <Route path="/about" element={<AboutPage />} />
+            </Routes>
+            {!hideFooterRoutes.includes(location.pathname) && <Footer />}
+        </>
+    );
+};
 
 const App = () => {
     const [currentUser, setcurrentUser] = useState(null);
@@ -48,20 +72,7 @@ const App = () => {
 
     return (
         <Router>
-            <Scroll2Top />
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/quiz-onboarding" element={<QuizOnboarding />} />
-                <Route path="/quiz-landing" element={<QuizLanding />} />
-                <Route path="/quiz" element={<QuizPage />} />
-                <Route path="/learn" element={<Learn />} />
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/signup" element={<SignupPage />} />
-                <Route path="/profile" element={<ProfilePage />} />
-                <Route path="/about" element={<AboutPage />} />
-            </Routes>
-            <Footer />
+            <AppContent />
         </Router>
     );
 };
