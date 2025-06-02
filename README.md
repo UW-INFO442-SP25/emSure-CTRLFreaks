@@ -1,7 +1,7 @@
 # emSured
 ## Take the guesswork out of health insurance.
 ### Group 4 - CTRL Freaks
-The published site can be viewed here: [Link]
+The published site can be viewed here: [Link](https://emsured.web.app/)
 
 ## Our Mission
 
