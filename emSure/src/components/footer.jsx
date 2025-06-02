@@ -8,12 +8,13 @@ export default function Footer() {
         <div className="footer-left">
           <h2 className="footer-logo">em<span className="bold">Sured</span></h2>
           <p className="footer-tagline">Take the guesswork out of health insurance</p>
-          <p className="footer-copy">Copyright 2025 © emSured. All Rights Reserved</p>
+          {/* <p className="footer-copy">Copyright 2025 © emSured. All Rights Reserved</p> */}
         </div>
         <div className="footer-links">
-          <Link to="/learn">Learn</Link>
+          {/* <Link to="/learn">Learn</Link>
           <Link to="/quiz-landing">Quiz</Link>
-          <Link to="/about">About</Link>
+          <Link to="/about">About</Link> */}
+          <p className="footer-copy">Copyright 2025 © emSured. All Rights Reserved</p>
         </div>
       </div>
     </footer>
