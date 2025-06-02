@@ -393,7 +393,7 @@ p {
     display: flex;
     width: 100%;
     /* max-width: 100vh; */
-    margin-top: 35rem;
+    margin-top: 41rem;
     margin-left: 30rem;
     justify-content: end;
 }
@@ -584,7 +584,7 @@ p {
 
   /* FOOTER -- BEGINNING */
   .footer {
-    background-color: var(--primary-color);
+    background-color: #ABE9F2;
     color: var(--black);
     padding: 1rem 2rem;
     width: 100%;
@@ -593,7 +593,7 @@ p {
   .footer-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: end;
     max-width: 1200px;
     margin: 0 auto;
     flex-wrap: wrap;
