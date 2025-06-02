@@ -35,19 +35,8 @@ export default function QuizPage(props) {
 
 
   const handleCompleteQuiz = async () => {
-    // console.log("handleCompleteQuiz called!");
-
     const auth = getAuth();
     const user = auth.currentUser;
-
-    if (!user) {
-      console.error("No authenticated user.");
-      return;
-    }
-
-    const rtdb = getDatabase();
-    const quizRef = ref(rtdb, `userData/${user.uid}/quizzes`);
-    const newQuizRef = push(quizRef);
 
     const quizData = {
       score: quizScore.correct,
@@ -56,14 +45,25 @@ export default function QuizPage(props) {
       completedAt: new Date().toISOString(),
     };
 
-    try {
-      await set(newQuizRef, quizData);
-      // console.log("Quiz result saved.");
-      setQuizCompleted(true);
-    } catch (error) {
-      console.error("Error saving quiz result:", error);
+    if (user) {
+      const rtdb = getDatabase();
+      const quizRef = ref(rtdb, `userData/${user.uid}/quizzes`);
+      const newQuizRef = push(quizRef);
+
+      try {
+        await set(newQuizRef, quizData);
+        console.log("Quiz result saved.");
+      } catch (error) {
+        console.error("Error saving quiz result:", error);
+      }
+    } else {
+      console.warn("User not logged in. Skipping database save.");
     }
+
+    // Always show results page, even if user is not logged in
+    setQuizCompleted(true);
   };
+
 
   const handleAnswerSelect = (option) => {
     setSelected(selected === option ? null : option);
