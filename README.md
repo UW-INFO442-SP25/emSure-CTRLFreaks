@@ -38,4 +38,6 @@ Built with:
 
 
 ## Testing protocol
+[View here](testing-protocol.pdf)
+
 ## References (research done, public databases used)
