@@ -32,7 +32,7 @@ Built with:
 - Firebase
 
 ## User Personas
-![User Persona 1](https://github.com/user-attachments/assets/af297d36-6236-452a-9101-976b84cc8c31)
+![User Persona 1](https://github.com/user-attachments/assets/51dc89ce-8616-4bac-98db-1322f8d220d2)
 
 ![User Persona 2](https://github.com/user-attachments/assets/7cf72b22-ffa5-4abc-b1f8-70eb6cccc3c0)
 
