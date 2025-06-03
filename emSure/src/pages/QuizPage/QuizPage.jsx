@@ -9,7 +9,7 @@ import { getAuth } from "firebase/auth";
 
 export default function QuizPage(props) {
   const [shuffledQuestions, setShuffledQuestions] = useState(() =>
-    [...data].sort(() => Math.random() - 0.5).slice(0, 5)
+    [...data].sort(() => Math.random() - 0.5).slice(0, 15)
   );
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selected, setSelected] = useState(null);

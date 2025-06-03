@@ -191,16 +191,6 @@
     "correctAnswer": "She's covered the same as in-network for emergency services"
   },
   {
-    "question": "Kyle has a chronic condition requiring frequent specialist visits and expensive medications. Which plan features should be his highest priority when selecting insurance?",
-    "options": [
-     "Low premium and high deductible",
-     "Low specialist copays and favorable prescription coverage",
-     "Low out-of-pocket maximum and good coverage for his specific medications",
-     "Coverage for alternative treatments"
-   ],
-     "correctAnswer": "Low out-of-pocket maximum and good coverage for his specific medications"
-   },
-  {
     "question": "Ryan's doctor recommends an MRI that costs $1,500. His insurance requires prior authorization. What happens if Ryan proceeds without getting authorization?",
     "options": [
     "The insurance will still cover it if medically necessary",
@@ -210,16 +200,6 @@
   ],
      "correctAnswer": "The insurance may deny coverage completely"
    },
-   {
-    "question": "Zoe's insurance card shows:\n\nPCP copay: $25\nSpecialist copay: $45\nER copay: $250 (waived if admitted)\nRx: $15/$30/$50\n\nWhat does the last line indicate?",
-    "options": [
-      "The cost for different quantities of medication (15/30/50 pills)",
-      "The copay for prescriptions at different pharmacy tiers",
-      "The copay for generic/preferred brand/non-preferred medications",
-      "The copay for prescriptions based on days' supply"
-    ],
-    "correctAnswer": "The copay for generic/preferred brand/non-preferred medications"
-  },
   {
     "question": "Marcus has a family HDHP with a $6,000 deductible. His wife is pregnant. What financial planning should they consider?",
     "options": [
