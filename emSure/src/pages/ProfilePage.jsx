@@ -96,7 +96,7 @@ export default function ProfilePage() {
 
         <div className="user-info">
           <div className="photo-username">
-            <img className='pfp' src="../../public/imgs/default-pfp.png" alt="pfp"/>
+            <img className='pfp' src="/imgs/default-pfp.png" alt="pfp"/>
             <h2>{userData.username}</h2>
           </div>
 
